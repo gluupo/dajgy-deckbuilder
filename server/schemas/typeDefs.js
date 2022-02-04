@@ -12,11 +12,21 @@ const typeDefs = gql`
     token: ID!
     user: User
   }
-
+  type Card {
+    name: String!
+    types: [String]!
+    manaCost: String
+    superTypes:[String]
+    rarity: String
+    imageUrl: String!
+    text: String
+    multiverseid: String
+  }
   type Query {
     users: [User]
     user(id: ID!): User
     me: User
+    search(name:String): [Card]
   }
 
   type Mutation {
