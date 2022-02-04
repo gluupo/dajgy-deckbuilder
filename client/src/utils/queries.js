@@ -29,3 +29,18 @@ export const QUERY_ME = gql`
     }
   }
 `;
+
+export const SEARCH = gql`
+  query search {
+    search(name:$name){
+      name
+      types
+      manaCost
+      superTypes
+      rarity
+      imageUrl
+      text
+      multiverseid
+    }
+  }
+`
