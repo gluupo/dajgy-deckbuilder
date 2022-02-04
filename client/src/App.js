@@ -12,6 +12,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import Search from './pages/Search';
 import Profile from './pages/Profile';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -55,6 +56,9 @@ function App() {
             </Route>
             <Route exact path="/signup">
               <Signup />
+            </Route>
+            <Route exact path="/search">
+              <Search />
             </Route>
             <Route exact path="/me">
               <Profile />
