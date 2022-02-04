@@ -31,7 +31,7 @@ export const QUERY_ME = gql`
 `;
 
 export const SEARCH = gql`
-  query search {
+  query search($name:String!) {
     search(name:$name){
       name
       types
