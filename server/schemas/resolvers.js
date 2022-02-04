@@ -1,5 +1,6 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User } = require('../models');
+const { card } = require('mtgsdk')
 
 const resolvers = {
   Query: {
@@ -15,6 +16,10 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+    search: async (_, args, context) => {
+      const response = await card.find({ name: args })
+      return response;
+    }
   },
 
   Mutation: {
