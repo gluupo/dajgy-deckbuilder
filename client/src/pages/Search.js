@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLazyQuery } from '@apollo/client';
 // Utilities
 import { SEARCH } from '../utils/queries';
+import Card from '../components/Card/Card';
 // Components
 
 const Search = () => {
@@ -20,17 +21,18 @@ const Search = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    try {
-      searchResults();
+    if (called && loading) {
+      return (
+        <p>loading</p>
+      )
+    } else {
+      try {
+        searchResults();
+      }
+      catch (e) {
+        console.log(e)
+      }
     }
-    catch (e) {
-      console.log(e)
-    }
-  }
-  if (called && loading) {
-    return (
-      <p>loading</p>
-    )
   }
 
   const renderSearch = () => {
@@ -50,7 +52,16 @@ const Search = () => {
               Submit
             </button>
           </form>
-          {results.map(e => <img key={e.multiverseid} src={e.imageUrl} />)}
+          {results.map(e =>
+            < Card
+              multiverseid={e.multiverseid}
+              name={e.name}
+              manaCost={e.manaCost}
+              superTypes={e.superTypes}
+              rarity={e.rarity}
+              imageUrl={e.imageUrl}
+              text={e.text}
+            />)}
         </>
       )
     }
