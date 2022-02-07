@@ -2,10 +2,10 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 // Utilities
-import Auth from '../utils/auth';
-import { QUERY_USERS } from '../utils/queries';
+import Auth from '../../utils/auth';
+import { QUERY_USERS } from '../../utils/queries';
 // Components
-import UserList from '../components/UserList';
+import UserList from '../../components/UserList';
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_USERS);
@@ -17,7 +17,7 @@ const Home = () => {
     } else {
       return <UserList users={users} title="List of Users" />
     }
-  } 
+  }
 
   const renderUsername = () => {
     if (!Auth.loggedIn()) return null;
@@ -26,6 +26,7 @@ const Home = () => {
 
   return (
     <main>
+      <div className="" id="bg"></div>
       <div>
         {renderUsername()}
       </div>

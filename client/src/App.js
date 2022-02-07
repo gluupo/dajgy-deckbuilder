@@ -9,13 +9,13 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import Home from './pages/Home';
-import Signup from './pages/Signup';
-import Login from './pages/Login';
+import Home from './pages/Home/Home';
+import Signup from './pages/Signup/Signup';
+import Login from './pages/Login/Login';
 import Search from './pages/Search';
-import Profile from './pages/Profile';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Profile from './pages/Profile/Profile';
+import Header from './components/Header/index';
+import Footer from './components/Footer/index';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
