@@ -27,12 +27,14 @@ const typeDefs = gql`
     imageUrl: String!
     text: String
     multiverseid: String
+    cardCount: Int
   }
   type Query {
     users: [User]
     user(id: ID!): User
     me: User
     search(name:String): [Card]
+    getDeck(_id:ID!): Deck
   }
 
   type Mutation {

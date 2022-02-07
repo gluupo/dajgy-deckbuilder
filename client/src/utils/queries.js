@@ -44,3 +44,22 @@ export const SEARCH = gql`
     }
   }
 `
+
+export const GET_DECK = gql`
+  query getDeck($_id:ID!) {
+    getDeck(_id:$_id){
+      _id
+      cards{
+        name
+        types
+        manaCost
+        superTypes
+        rarity
+        imageUrl
+        text
+        multiverseid
+        cardCount
+      }
+    }
+  }
+`

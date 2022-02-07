@@ -21,6 +21,10 @@ const resolvers = {
       const response = await card.where({ name: args.name });
       console.log(response)
       return response.filter(e => e.imageUrl)
+    },
+    getDeck: async (_, args, context) => {
+      const deck = await Deck.findOne({ _id: args._id })
+      return deck;
     }
   },
 
@@ -59,6 +63,8 @@ const resolvers = {
     addToDeck: async (_, args, context) => {
       // if (context.user) {
       // const user = await User.findOne({ _id: context.user._id });
+      Object.keys(args).map(k => args[k] = typeof args[k] == 'string' ? args[k].trim() : args[k]);
+      console.log(args)
       const deck = await Deck.findOneAndUpdate({ _id: args._id }, { $addToSet: { cards: { ...args } } }, { new: true });
       return deck;
     },
