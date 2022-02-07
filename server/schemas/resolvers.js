@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models');
+const { User, Deck } = require('../models');
 const { card } = require('mtgsdk')
 const { signToken } = require('../utils/auth')
 
@@ -46,8 +46,24 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
-    }
+    },
+    createDeck: async (_, args, context) => {
+      // if (context.user) {
+      const deck = await Deck.create({});
+      // const user = await User.findOne({ _id: context.user._id });
+      // user.decks.push(deck._id);
+      // user.workingDeck = deck._id;
+      // user.save();
+      return deck
+    },
+    addToDeck: async (_, args, context) => {
+      // if (context.user) {
+      // const user = await User.findOne({ _id: context.user._id });
+      const deck = await Deck.findOneAndUpdate({ _id: args._id }, { $addToSet: { cards: { ...args } } }, { new: true });
+      return deck;
+    },
   }
-};
+}
+
 
 module.exports = resolvers;

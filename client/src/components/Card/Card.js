@@ -1,9 +1,42 @@
 import React from "react";
 import { Col } from "react-bootstrap"
 
+const Card = (item) => {
 
-const Card = ({ name, types, manaCost, superTypes, rarity, imageUrl, text, multiverseid }) => {
 
+
+  const {
+    name,
+    types,
+    manaCost,
+    superTypes,
+    rarity,
+    imageUrl,
+    text,
+    multiverseid
+  } = item;
+
+
+  const addToDeck = (id) => {
+    // const cardInDeck = deck.find((deckItem) => deckItem.multiverseid === multiverseid)
+    // if (cardInDeck) {
+    //   dispatch({
+    //     type: UPDATE_DECK_QUANTITY,
+    //     multiverseid: multiverseid,
+    //     cardQuantity: parseInt(cardInDeck.cardQuantity) + 1
+    //   });
+    //   idbPromise('deck', 'put', {
+    //     ...cardInDeck,
+    //     cardQuantity: parseInt(cardInDeck.cardQuantity) + 1
+    //   });
+    // } else {
+    //   dispatch({
+    //     type: ADD_TO_DECK,
+    //     product: { ...item, cardQuantity: 1 }
+    //   });
+    //   idbPromise('deck', 'add', { ...item, cardQuantity: 1 });
+    // }
+  }
 
 
   const divStyle = {
@@ -15,7 +48,7 @@ const Card = ({ name, types, manaCost, superTypes, rarity, imageUrl, text, multi
   }
 
   return (
-    <Col xs={3} key={multiverseid} style={divStyle} className='mb-3'>
+    <Col xs={3} key={multiverseid} style={divStyle} className='mb-3' onClick={() => addToDeck(multiverseid)}>
     </Col>
   )
 }

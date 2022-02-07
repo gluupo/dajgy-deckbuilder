@@ -19,6 +19,10 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
+  workingDeck: {
+    type: Schema.Types.ObjectId,
+    ref: 'Deck'
+  },
   decks: [
     {
       type: Schema.Types.ObjectId,
