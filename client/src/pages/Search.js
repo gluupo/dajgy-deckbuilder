@@ -3,6 +3,7 @@ import { useLazyQuery } from '@apollo/client';
 // Utilities
 import { SEARCH } from '../utils/queries';
 import Card from '../components/Card/Card';
+import { Pagination } from 'react-bootstrap'
 // Components
 
 const Search = () => {
