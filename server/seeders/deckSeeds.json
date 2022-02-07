@@ -1,0 +1,958 @@
+[
+  {
+    "name": "Fun Deck"
+  },
+  {
+    "card": [
+      {
+        "name": "Kamahl, Pit Fighter",
+        "types": [
+          "Creature"
+        ],
+        "manaCost": "{4}{R}{R}",
+        "superTypes": null,
+        "rarity": "Rare",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=29963&type=card",
+        "text": "Haste (This creature can attack and {T} as soon as it comes under your control.)\n{T}: Kamahl, Pit Fighter deals 3 damage to any target.",
+        "multiverseid": "29963"
+      },
+      {
+        "name": "Kamahl's Desire",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{1}{R}",
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=29761&type=card",
+        "text": "Enchant creature\nEnchanted creature has first strike.\nThreshold — Enchanted creature gets +3/+0 as long as seven or more cards are in your graveyard.",
+        "multiverseid": "29761"
+      },
+      {
+        "name": "Xyris, the Writhing Storm",
+        "types": [
+          "Creature"
+        ],
+        "manaCost": "{2}{G}{U}{R}",
+        "superTypes": null,
+        "rarity": "Mythic",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=484725&type=card",
+        "text": "Flying\nWhenever an opponent draws a card except the first one they draw in each of their draw steps, create a 1/1 green Snake creature token.\nWhenever Xyris, the Writhing Storm deals combat damage to a player, you and that player each draw that many cards.",
+        "multiverseid": "484725"
+      },
+      {
+        "name": "Juju Bubble",
+        "types": [
+          "Artifact"
+        ],
+        "manaCost": "{1}",
+        "superTypes": null,
+        "rarity": "Uncommon",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3595&type=card",
+        "text": "Cumulative upkeep {1} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)\nWhen you play a card, sacrifice Juju Bubble.\n{2}: You gain 1 life.",
+        "multiverseid": "3595"
+      },
+      {
+        "name": "Serra Angel",
+        "types": [
+          "Creature"
+        ],
+        "manaCost": "{3}{W}{W}",
+        "superTypes": null,
+        "rarity": "Uncommon",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=401455&type=card",
+        "text": "Flying, vigilance",
+        "multiverseid": "401455"
+      },
+      {
+        "name": "Serra's Blessing",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{1}{W}",
+        "superTypes": null,
+        "rarity": "Uncommon",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=14476&type=card",
+        "text": "Creatures you control have vigilance. (Attacking doesn't cause them to tap.)",
+        "multiverseid": "14476"
+      },
+      {
+        "name": "Serra",
+        "types": [
+          "Vanguard"
+        ],
+        "manaCost": null,
+        "superTypes": null,
+        "rarity": "Rare",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=12332&type=card",
+        "text": "Creatures you control get +0/+2.",
+        "multiverseid": "12332"
+      },
+      {
+        "name": "Serrated Scorpion",
+        "types": [
+          "Creature"
+        ],
+        "manaCost": "{B}",
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=479619&type=card",
+        "text": "When Serrated Scorpion dies, it deals 2 damage to each opponent and you gain 2 life.",
+        "multiverseid": "479619"
+      },
+      {
+        "name": "Island",
+        "types": [
+          "Land"
+        ],
+        "manaCost": null,
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=459995&type=card",
+        "text": "({T}: Add {U}.)",
+        "multiverseid": "459995"
+      },
+      {
+        "name": "Woodland Druid",
+        "types": [
+          "Creature"
+        ],
+        "manaCost": "{G}",
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=29772&type=card",
+        "text": null,
+        "multiverseid": "29772"
+      },
+      {
+        "name": "Ravaged Highlands",
+        "types": [
+          "Land"
+        ],
+        "manaCost": null,
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=31764&type=card",
+        "text": "Ravaged Highlands enters the battlefield tapped.\n{T}: Add {R}.\n{T}, Sacrifice Ravaged Highlands: Add one mana of any color.",
+        "multiverseid": "31764"
+      },
+      {
+        "name": "Timberland Ruins",
+        "types": [
+          "Land"
+        ],
+        "manaCost": null,
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=31765&type=card",
+        "text": "Timberland Ruins enters the battlefield tapped.\n{T}: Add {G}.\n{T}, Sacrifice Timberland Ruins: Add one mana of any color.",
+        "multiverseid": "31765"
+      },
+      {
+        "name": "Plains",
+        "types": [
+          "Land"
+        ],
+        "manaCost": null,
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=459994&type=card",
+        "text": "({T}: Add {W}.)",
+        "multiverseid": "459994"
+      },
+      {
+        "name": "Beloved Chaplain",
+        "types": [
+          "Creature"
+        ],
+        "manaCost": "{1}{W}",
+        "superTypes": null,
+        "rarity": "Uncommon",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=29798&type=card",
+        "text": "Protection from creatures",
+        "multiverseid": "29798"
+      },
+      {
+        "name": "Curse Artifact",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{2}{B}{B}",
+        "superTypes": null,
+        "rarity": "Uncommon",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1732&type=card",
+        "text": "Enchant artifact\nAt the beginning of the upkeep of enchanted artifact's controller, Curse Artifact deals 2 damage to that player unless they sacrifice that artifact.",
+        "multiverseid": "1732"
+      },
+      {
+        "name": "Ensoul Artifact",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{1}{U}",
+        "superTypes": null,
+        "rarity": "Uncommon",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=383232&type=card",
+        "text": "Enchant artifact\nEnchanted artifact is a creature with base power and toughness 5/5 in addition to its other types.",
+        "multiverseid": "383232"
+      },
+      {
+        "name": "Animate Artifact",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{3}{U}",
+        "superTypes": null,
+        "rarity": "Uncommon",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=391&type=card",
+        "text": "Enchant artifact\nAs long as enchanted artifact isn't a creature, it's an artifact creature with power and toughness each equal to its mana value.",
+        "multiverseid": "391"
+      },
+      {
+        "name": "Copy Artifact",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{1}{U}",
+        "superTypes": null,
+        "rarity": "Rare",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=396&type=card",
+        "text": "You may have Copy Artifact enter the battlefield as a copy of any artifact on the battlefield, except it's an enchantment in addition to its other types.",
+        "multiverseid": "396"
+      },
+      {
+        "name": "Steal Artifact",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{2}{U}{U}",
+        "superTypes": null,
+        "rarity": "Uncommon",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=424&type=card",
+        "text": "Enchant artifact\nYou control enchanted artifact.",
+        "multiverseid": "424"
+      },
+      {
+        "name": "Warp Artifact",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{B}{B}",
+        "superTypes": null,
+        "rarity": "Rare",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=384&type=card",
+        "text": "Enchant artifact\nAt the beginning of the upkeep of enchanted artifact's controller, Warp Artifact deals 1 damage to that player.",
+        "multiverseid": "384"
+      },
+      {
+        "name": "Living Artifact",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{G}",
+        "superTypes": null,
+        "rarity": "Rare",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=459&type=card",
+        "text": "Enchant artifact\nWhenever you're dealt damage, put that many vitality counters on Living Artifact.\nAt the beginning of your upkeep, you may remove a vitality counter from Living Artifact. If you do, you gain 1 life.",
+        "multiverseid": "459"
+      },
+      {
+        "name": "Artifact Ward",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{W}",
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1066&type=card",
+        "text": "Enchant creature\nEnchanted creature can't be blocked by artifact creatures.\nPrevent all damage that would be dealt to enchanted creature by artifact sources.\nEnchanted creature can't be the target of abilities from artifact sources.",
+        "multiverseid": "1066"
+      },
+      {
+        "name": "Circle of Protection: Artifacts",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{1}{W}",
+        "superTypes": null,
+        "rarity": "Uncommon",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1067&type=card",
+        "text": "{2}: The next time an artifact source of your choice would deal damage to you this turn, prevent that damage.",
+        "multiverseid": "1067"
+      },
+      {
+        "name": "Power Artifact",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{U}{U}",
+        "superTypes": null,
+        "rarity": "Uncommon",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1043&type=card",
+        "text": "Enchant artifact\nEnchanted artifact's activated abilities cost {2} less to activate. This effect can't reduce the mana in that cost to less than one mana.",
+        "multiverseid": "1043"
+      },
+      {
+        "name": "Transmute Artifact",
+        "types": [
+          "Sorcery"
+        ],
+        "manaCost": "{U}{U}",
+        "superTypes": null,
+        "rarity": "Uncommon",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1047&type=card",
+        "text": "Sacrifice an artifact. If you do, search your library for an artifact card. If that card's mana value is less than or equal to the sacrificed artifact's mana value, put it onto the battlefield. If it's greater, you may pay {X}, where X is the difference. If you do, put it onto the battlefield. If you don't, put it into its owner's graveyard. Then shuffle.",
+        "multiverseid": "1047"
+      },
+      {
+        "name": "Artifact Possession",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{2}{B}",
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1036&type=card",
+        "text": "Enchant artifact\nWhenever enchanted artifact becomes tapped or a player activates an ability of enchanted artifact without {T} in its activation cost, Artifact Possession deals 2 damage to that artifact's controller.",
+        "multiverseid": "1036"
+      },
+      {
+        "name": "Artifact Blast",
+        "types": [
+          "Instant"
+        ],
+        "manaCost": "{R}",
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1057&type=card",
+        "text": "Counter target artifact spell.",
+        "multiverseid": "1057"
+      },
+      {
+        "name": "Steal Artifact",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{2}{U}{U}",
+        "superTypes": null,
+        "rarity": "Uncommon",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=45263&type=card",
+        "text": "Enchant artifact\nYou control enchanted artifact.",
+        "multiverseid": "45263"
+      },
+      {
+        "name": "Circle of Protection: Artifacts",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{1}{W}",
+        "superTypes": null,
+        "rarity": "Uncommon",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2328&type=card",
+        "text": "{2}: The next time an artifact source of your choice would deal damage to you this turn, prevent that damage.",
+        "multiverseid": "2328"
+      },
+      {
+        "name": "Animate Artifact",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{3}{U}",
+        "superTypes": null,
+        "rarity": "Uncommon",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2143&type=card",
+        "text": "Enchant artifact\nAs long as enchanted artifact isn't a creature, it's an artifact creature with power and toughness each equal to its mana value.",
+        "multiverseid": "2143"
+      },
+      {
+        "name": "Steal Artifact",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{2}{U}{U}",
+        "superTypes": null,
+        "rarity": "Uncommon",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2188&type=card",
+        "text": "Enchant artifact\nYou control enchanted artifact.",
+        "multiverseid": "2188"
+      },
+      {
+        "name": "Warp Artifact",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{B}{B}",
+        "superTypes": null,
+        "rarity": "Rare",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2136&type=card",
+        "text": "Enchant artifact\nAt the beginning of the upkeep of enchanted artifact's controller, Warp Artifact deals 1 damage to that player.",
+        "multiverseid": "2136"
+      },
+      {
+        "name": "Living Artifact",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{G}",
+        "superTypes": null,
+        "rarity": "Rare",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2226&type=card",
+        "text": "Enchant artifact\nWhenever you're dealt damage, put that many vitality counters on Living Artifact.\nAt the beginning of your upkeep, you may remove a vitality counter from Living Artifact. If you do, you gain 1 life.",
+        "multiverseid": "2226"
+      },
+      {
+        "name": "Artifact Blast",
+        "types": [
+          "Instant"
+        ],
+        "manaCost": "{R}",
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=159744&type=card",
+        "text": "Counter target artifact spell.",
+        "multiverseid": "159744"
+      },
+      {
+        "name": "Artifact Mutation",
+        "types": [
+          "Instant"
+        ],
+        "manaCost": "{R}{G}",
+        "superTypes": null,
+        "rarity": "Rare",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=23195&type=card",
+        "text": "Destroy target artifact. It can't be regenerated. Create X 1/1 green Saproling creature tokens, where X is that artifact's mana value.",
+        "multiverseid": "23195"
+      },
+      {
+        "name": "Animate Artifact",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{3}{U}",
+        "superTypes": null,
+        "rarity": "Uncommon",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=693&type=card",
+        "text": "Enchant artifact\nAs long as enchanted artifact isn't a creature, it's an artifact creature with power and toughness each equal to its mana value.",
+        "multiverseid": "693"
+      },
+      {
+        "name": "Copy Artifact",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{1}{U}",
+        "superTypes": null,
+        "rarity": "Rare",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=698&type=card",
+        "text": "You may have Copy Artifact enter the battlefield as a copy of any artifact on the battlefield, except it's an enchantment in addition to its other types.",
+        "multiverseid": "698"
+      },
+      {
+        "name": "Steal Artifact",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{2}{U}{U}",
+        "superTypes": null,
+        "rarity": "Uncommon",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=726&type=card",
+        "text": "Enchant artifact\nYou control enchanted artifact.",
+        "multiverseid": "726"
+      },
+      {
+        "name": "Warp Artifact",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{B}{B}",
+        "superTypes": null,
+        "rarity": "Rare",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=686&type=card",
+        "text": "Enchant artifact\nAt the beginning of the upkeep of enchanted artifact's controller, Warp Artifact deals 1 damage to that player.",
+        "multiverseid": "686"
+      },
+      {
+        "name": "Living Artifact",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{G}",
+        "superTypes": null,
+        "rarity": "Rare",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=761&type=card",
+        "text": "Enchant artifact\nWhenever you're dealt damage, put that many vitality counters on Living Artifact.\nAt the beginning of your upkeep, you may remove a vitality counter from Living Artifact. If you do, you gain 1 life.",
+        "multiverseid": "761"
+      },
+      {
+        "name": "Teferi's Puzzle Box",
+        "types": [
+          "Artifact"
+        ],
+        "manaCost": "{4}",
+        "superTypes": null,
+        "rarity": "Rare",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15410&type=card",
+        "text": "At the beginning of each player's draw step, that player puts the cards in their hand on the bottom of their library in any order, then draws that many cards.",
+        "multiverseid": "15410"
+      },
+      {
+        "name": "Teferi's Veil",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{1}{U}",
+        "superTypes": null,
+        "rarity": "Uncommon",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=4499&type=card",
+        "text": "Whenever a creature you control attacks, it phases out at end of combat. (While it's phased out, it's treated as though it doesn't exist. It phases in before you untap during your next untap step.)",
+        "multiverseid": "4499"
+      },
+      {
+        "name": "Teferi, Mage of Zhalfir",
+        "types": [
+          "Creature"
+        ],
+        "manaCost": "{2}{U}{U}{U}",
+        "superTypes": null,
+        "rarity": "Mythic",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=244667&type=card",
+        "text": "Flash\nCreature cards you own that aren't on the battlefield have flash.\nEach opponent can cast spells only any time they could cast a sorcery.",
+        "multiverseid": "244667"
+      },
+      {
+        "name": "Teferi's Time Twist",
+        "types": [
+          "Instant"
+        ],
+        "manaCost": "{1}{U}",
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=460999&type=card",
+        "text": "Exile target permanent you control. Return that card to the battlefield under its owner's control at the beginning of the next end step. If it enters the battlefield as a creature, it enters with an additional +1/+1 counter on it.",
+        "multiverseid": "460999"
+      },
+      {
+        "name": "Teferi, Time Raveler",
+        "types": [
+          "Planeswalker"
+        ],
+        "manaCost": "{1}{W}{U}",
+        "superTypes": null,
+        "rarity": "Rare",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=461148&type=card",
+        "text": "Each opponent can cast spells only any time they could cast a sorcery.\n[+1]: Until your next turn, you may cast sorcery spells as though they had flash.\n[−3]: Return up to one target artifact, creature, or enchantment to its owner's hand. Draw a card.",
+        "multiverseid": "461148"
+      },
+      {
+        "name": "Teferi, Who Slows the Sunset",
+        "types": [
+          "Planeswalker"
+        ],
+        "manaCost": "{2}{W}{U}",
+        "superTypes": null,
+        "rarity": "Mythic",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=535041&type=card",
+        "text": "[+1]: Choose up to one target artifact, up to one target creature, and up to one target land. Untap the chosen permanents you control. Tap the chosen permanents you don't control. You gain 2 life.\n[−2]: Look at the top three cards of your library. Put one of them into your hand and the rest on the bottom of your library in any order.\n[−7]: You get an emblem with \"Untap all permanents you control during each opponent's untap step\" and \"You draw a card during each opponent's draw step.\"",
+        "multiverseid": "535041"
+      },
+      {
+        "name": "Teferi, Who Slows the Sunset",
+        "types": [
+          "Planeswalker"
+        ],
+        "manaCost": "{2}{W}{U}",
+        "superTypes": null,
+        "rarity": "Mythic",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=538395&type=card",
+        "text": "[+1]: Choose up to one target artifact, up to one target creature, and up to one target land. Untap the chosen permanents you control. Tap the chosen permanents you don't control. You gain 2 life.\n[−2]: Look at the top three cards of your library. Put one of them into your hand and the rest on the bottom of your library in any order.\n[−7]: You get an emblem with \"Untap all permanents you control during each opponent's untap step\" and \"You draw a card during each opponent's draw step.\"",
+        "multiverseid": "538395"
+      },
+      {
+        "name": "Teferi, Mage of Zhalfir",
+        "types": [
+          "Creature"
+        ],
+        "manaCost": "{2}{U}{U}{U}",
+        "superTypes": null,
+        "rarity": "Mythic",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=509456&type=card",
+        "text": "Flash\nCreature cards you own that aren't on the battlefield have flash.\nEach opponent can cast spells only any time they could cast a sorcery.",
+        "multiverseid": "509456"
+      },
+      {
+        "name": "Teferi, Temporal Archmage",
+        "types": [
+          "Planeswalker"
+        ],
+        "manaCost": "{4}{U}{U}",
+        "superTypes": null,
+        "rarity": "Mythic",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=389712&type=card",
+        "text": "[+1]: Look at the top two cards of your library. Put one of them into your hand and the other on the bottom of your library.\n[−1]: Untap up to four target permanents.\n[−10]: You get an emblem with \"You may activate loyalty abilities of planeswalkers you control on any player's turn any time you could cast an instant.\"\nTeferi, Temporal Archmage can be your commander.",
+        "multiverseid": "389712"
+      },
+      {
+        "name": "Teferi's Protection",
+        "types": [
+          "Instant"
+        ],
+        "manaCost": "{2}{W}",
+        "superTypes": null,
+        "rarity": "Rare",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=497517&type=card",
+        "text": "Until your next turn, your life total can't change and you gain protection from everything. All permanents you control phase out. (While they're phased out, they're treated as though they don't exist. They phase in before you untap during your untap step.)\nExile Teferi's Protection.",
+        "multiverseid": "497517"
+      },
+      {
+        "name": "Teferi's Puzzle Box",
+        "types": [
+          "Artifact"
+        ],
+        "manaCost": "{4}",
+        "superTypes": null,
+        "rarity": "Rare",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=45483&type=card",
+        "text": "At the beginning of each player's draw step, that player puts the cards in their hand on the bottom of their library in any order, then draws that many cards.",
+        "multiverseid": "45483"
+      },
+      {
+        "name": "Teferi's Care",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{2}{W}",
+        "superTypes": null,
+        "rarity": "Uncommon",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22959&type=card",
+        "text": "{W}, Sacrifice an enchantment: Destroy target enchantment.\n{3}{U}{U}: Counter target enchantment spell.",
+        "multiverseid": "22959"
+      },
+      {
+        "name": "Teferi's Response",
+        "types": [
+          "Instant"
+        ],
+        "manaCost": "{1}{U}",
+        "superTypes": null,
+        "rarity": "Rare",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=23015&type=card",
+        "text": "Counter target spell or ability an opponent controls that targets a land you control. If a permanent's ability is countered this way, destroy that permanent.\nDraw two cards.",
+        "multiverseid": "23015"
+      },
+      {
+        "name": "Teferi's Moat",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{3}{W}{U}",
+        "superTypes": null,
+        "rarity": "Rare",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=23167&type=card",
+        "text": "As Teferi's Moat enters the battlefield, choose a color.\nCreatures of the chosen color without flying can't attack you.",
+        "multiverseid": "23167"
+      },
+      {
+        "name": "Oath of Teferi",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{3}{W}{U}",
+        "superTypes": null,
+        "rarity": "Rare",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=443088&type=card",
+        "text": "When Oath of Teferi enters the battlefield, exile another target permanent you control. Return it to the battlefield under its owner's control at the beginning of the next end step.\nYou may activate the loyalty abilities of planeswalkers you control twice each turn rather than only once.",
+        "multiverseid": "443088"
+      },
+      {
+        "name": "Teferi, Hero of Dominaria",
+        "types": [
+          "Planeswalker"
+        ],
+        "manaCost": "{3}{W}{U}",
+        "superTypes": null,
+        "rarity": "Mythic",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=443095&type=card",
+        "text": "[+1]: Draw a card. At the beginning of the next end step, untap up to two lands.\n[−3]: Put target nonland permanent into its owner's library third from the top.\n[−8]: You get an emblem with \"Whenever you draw a card, exile target permanent an opponent controls.\"",
+        "multiverseid": "443095"
+      },
+      {
+        "name": "Teferi, Timebender",
+        "types": [
+          "Planeswalker"
+        ],
+        "manaCost": "{4}{W}{U}",
+        "superTypes": null,
+        "rarity": "Mythic",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=445848&type=card",
+        "text": "[+2]: Untap up to one target artifact or creature.\n[−3]: You gain 2 life and draw two cards.\n[−9]: Take an extra turn after this one.",
+        "multiverseid": "445848"
+      },
+      {
+        "name": "Teferi's Sentinel",
+        "types": [
+          "Artifact",
+          "Creature"
+        ],
+        "manaCost": "{5}",
+        "superTypes": null,
+        "rarity": "Uncommon",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=445851&type=card",
+        "text": "As long as you control a Teferi planeswalker, Teferi's Sentinel gets +4/+0.",
+        "multiverseid": "445851"
+      },
+      {
+        "name": "Teferi's Honor Guard",
+        "types": [
+          "Creature"
+        ],
+        "manaCost": "{2}{W}",
+        "superTypes": null,
+        "rarity": "Uncommon",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3729&type=card",
+        "text": "Flanking (Whenever a creature without flanking blocks this creature, the blocking creature gets -1/-1 until end of turn.)\n{U}{U}: Teferi's Honor Guard phases out. (While it's phased out, it's treated as though it doesn't exist. It phases in before you untap during your next untap step.)",
+        "multiverseid": "3729"
+      },
+      {
+        "name": "Teferi's Realm",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{1}{U}{U}",
+        "superTypes": null,
+        "rarity": "Rare",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3651&type=card",
+        "text": "At the beginning of each player's upkeep, that player chooses artifact, creature, land, or non-Aura enchantment. All nontoken permanents of that type phase out. (While they're phased out, they're treated as though they don't exist. Each one phases in before its controller untaps during their next untap step.)",
+        "multiverseid": "3651"
+      },
+      {
+        "name": "Swamp",
+        "types": [
+          "Land"
+        ],
+        "manaCost": null,
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=459996&type=card",
+        "text": "({T}: Add {B}.)",
+        "multiverseid": "459996"
+      },
+      {
+        "name": "Swamp",
+        "types": [
+          "Land"
+        ],
+        "manaCost": null,
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=31617&type=card",
+        "text": "({T}: Add {B}.)",
+        "multiverseid": "31617"
+      },
+      {
+        "name": "Swamp",
+        "types": [
+          "Land"
+        ],
+        "manaCost": null,
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=31618&type=card",
+        "text": "({T}: Add {B}.)",
+        "multiverseid": "31618"
+      },
+      {
+        "name": "Swamp",
+        "types": [
+          "Land"
+        ],
+        "manaCost": null,
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=31619&type=card",
+        "text": "({T}: Add {B}.)",
+        "multiverseid": "31619"
+      },
+      {
+        "name": "Swamp",
+        "types": [
+          "Land"
+        ],
+        "manaCost": null,
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=31620&type=card",
+        "text": "({T}: Add {B}.)",
+        "multiverseid": "31620"
+      },
+      {
+        "name": "Swamp",
+        "types": [
+          "Land"
+        ],
+        "manaCost": null,
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=455602&type=card",
+        "text": "({T}: Add {B}.)",
+        "multiverseid": "455602"
+      },
+      {
+        "name": "Swamp",
+        "types": [
+          "Land"
+        ],
+        "manaCost": null,
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=386372&type=card",
+        "text": "({T}: Add {B}.)",
+        "multiverseid": "386372"
+      },
+      {
+        "name": "Swamp",
+        "types": [
+          "Land"
+        ],
+        "manaCost": null,
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=386373&type=card",
+        "text": "({T}: Add {B}.)",
+        "multiverseid": "386373"
+      },
+      {
+        "name": "Swamp",
+        "types": [
+          "Land"
+        ],
+        "manaCost": null,
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=386371&type=card",
+        "text": "({T}: Add {B}.)",
+        "multiverseid": "386371"
+      },
+      {
+        "name": "Swamp",
+        "types": [
+          "Land"
+        ],
+        "manaCost": null,
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=201977&type=card",
+        "text": "({T}: Add {B}.)",
+        "multiverseid": "201977"
+      },
+      {
+        "name": "Swamp",
+        "types": [
+          "Land"
+        ],
+        "manaCost": null,
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=195172&type=card",
+        "text": "({T}: Add {B}.)",
+        "multiverseid": "195172"
+      },
+      {
+        "name": "Swamp",
+        "types": [
+          "Land"
+        ],
+        "manaCost": null,
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=195194&type=card",
+        "text": "({T}: Add {B}.)",
+        "multiverseid": "195194"
+      },
+      {
+        "name": "Forest",
+        "types": [
+          "Land"
+        ],
+        "manaCost": null,
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=459998&type=card",
+        "text": "({T}: Add {G}.)",
+        "multiverseid": "459998"
+      },
+      {
+        "name": "Forest",
+        "types": [
+          "Land"
+        ],
+        "manaCost": null,
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=31625&type=card",
+        "text": "({T}: Add {G}.)",
+        "multiverseid": "31625"
+      },
+      {
+        "name": "Forest",
+        "types": [
+          "Land"
+        ],
+        "manaCost": null,
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=31626&type=card",
+        "text": "({T}: Add {G}.)",
+        "multiverseid": "31626"
+      },
+      {
+        "name": "Forest",
+        "types": [
+          "Land"
+        ],
+        "manaCost": null,
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=31627&type=card",
+        "text": "({T}: Add {G}.)",
+        "multiverseid": "31627"
+      },
+      {
+        "name": "Forest",
+        "types": [
+          "Land"
+        ],
+        "manaCost": null,
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=31628&type=card",
+        "text": "({T}: Add {G}.)",
+        "multiverseid": "31628"
+      },
+      {
+        "name": "Forest",
+        "types": [
+          "Land"
+        ],
+        "manaCost": null,
+        "superTypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=455604&type=card",
+        "text": "({T}: Add {G}.)",
+        "multiverseid": "455604"
+      },
+      {
+        "name": "Misty Rainforest",
+        "types": [
+          "Land"
+        ],
+        "manaCost": null,
+        "superTypes": null,
+        "rarity": "Rare",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=190413&type=card",
+        "text": "{T}, Pay 1 life, Sacrifice Misty Rainforest: Search your library for a Forest or Island card, put it onto the battlefield, then shuffle.",
+        "multiverseid": "190413"
+      }
+    ]
+  }
+]
