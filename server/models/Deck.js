@@ -3,10 +3,9 @@ const { Schema, model } = require('mongoose');
 const deckSchema = new Schema({
   name: {
     type: String,
-    required: true,
     unique: true,
   },
-  card: [
+  cards: [
     {
       name: {
         type: String,

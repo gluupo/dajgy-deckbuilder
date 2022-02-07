@@ -53,4 +53,11 @@ export const ADD_COMMENT = gql`
       }
     }
   }
-`;
+`
+
+export const CREATE_DECK = gql`
+  mutation createDeck{
+    createDeck{
+      _id
+    }
+}`;
