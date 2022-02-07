@@ -5,10 +5,7 @@ import { Col } from "react-bootstrap"
 const Card = ({ name, types, manaCost, superTypes, rarity, imageUrl, text, multiverseid }) => {
 
 
-  const addToDeck = () => {
-    const cardInDeck = deck.find((card) => card.multiverseid === multiverseid)
-    if (cardInDeck)
-  }
+
 
   const divStyle = {
     backgroundImage: `url(${imageUrl})`,
@@ -23,5 +20,6 @@ const Card = ({ name, types, manaCost, superTypes, rarity, imageUrl, text, multi
     </Col>
   )
 }
+
 
 export default Card;

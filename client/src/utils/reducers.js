@@ -71,6 +71,6 @@ export const reducer = (state, action) => {
   }
 };
 
-export function useProductReducer(initialState) {
+export function useCardReducer(initialState) {
   return useReducer(reducer, initialState)
 }
