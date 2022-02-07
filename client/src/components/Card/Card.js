@@ -6,7 +6,6 @@ const Card = ({ name, types, manaCost, superTypes, rarity, imageUrl, text, multi
 
 
 
-
   const divStyle = {
     backgroundImage: `url(${imageUrl})`,
     backgroundSize: 'contain',
