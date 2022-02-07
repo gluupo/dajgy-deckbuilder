@@ -12,7 +12,7 @@ const typeDefs = gql`
     token: ID!
     user: User
   }
-  type Card {
+  type Card @cacheControl(maxAge:86400, scope: PUBLIC) {
     name: String!
     types: [String]!
     manaCost: String
@@ -33,6 +33,17 @@ const typeDefs = gql`
     addUser(email:String!, username:String!, password:String!): Auth
     login(email:String!, password:String!): Auth
   }
+
+  enum CacheControlScope {
+  PUBLIC
+  PRIVATE
+}
+
+directive @cacheControl(
+  maxAge: Int
+  scope: CacheControlScope
+  inheritMaxAge: Boolean
+) on FIELD_DEFINITION | OBJECT | INTERFACE | UNION
 `;
 
 module.exports = typeDefs;
