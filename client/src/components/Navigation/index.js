@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Nav } from "react-bootstrap"
+import { Nav, Navbar, Container } from "react-bootstrap"
 
 import Auth from '../../utils/auth';
 
-function Navbar() {
+function Navigation() {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
@@ -24,20 +24,22 @@ function Navbar() {
   }
   // If logged out show login controls
   return (
-    <>
-      <div className="navbar-dark">
-        <Link to="/login">
-          Login
-        </Link>
-        <Link to="/signup">
-          Signup
-        </Link>
-        <Link to="/search">
-          Search
-        </Link>
-      </div>
-    </>
+    <Navbar bg="dark" variant="dark">
+      <Container>
+        <Nav className="me-auto">
+          <Nav.Link href="/login">
+            Login
+          </Nav.Link>
+          <Nav.Link href="/signup">
+            Signup
+          </Nav.Link>
+          <Nav.Link href="/search">
+            Search
+          </Nav.Link>
+        </Nav>
+      </Container>
+    </Navbar>
   )
 }
 
-export default Navbar;
+export default Navigation;
