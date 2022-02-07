@@ -18,6 +18,7 @@ import Header from './components/Header/index';
 import Footer from './components/Footer/index';
 import { DeckProvider } from './utils/GlobalState';
 
+
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',

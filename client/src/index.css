@@ -1,5 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Inconsolata&family=Jura:wght@300;400;500;600;700&family=Rubik+Mono+One&display=swap');
+
 html, * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Inconsolata', monospace;
+}
+
+body {
+  background-image: url(./pages/Home/styles/assets/bg.jpg);
+  background-size: cover;
+}
+
+h1, #submit {
+  font-family: 'Rubik Mono One', sans-serif;
 }

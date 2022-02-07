@@ -8,8 +8,12 @@ db.once('open', async () => {
   try {
     await User.deleteMany({});
     await Deck.deleteMany({});
-    await User.create(userSeeds);
-    await Deck.create(deckSeeds);
+    await User.insertMany(userSeeds);
+    await Deck.insertMany(deckSeeds);
+
+    const deck = await Deck.findOne()
+    const user = await User.findOneAndUpdate({}, { $addToSet: { decks: deck._id } });
+
   } catch (err) {
     console.error(err);
     process.exit(1);
