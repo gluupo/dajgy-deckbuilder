@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useLazyQuery } from '@apollo/client';
+import { Pagination, Row, Col, Form, Button, Container } from 'react-bootstrap'
 // Utilities
 import { SEARCH } from '../utils/queries';
-import Card from '../components/Card/Card';
-import { Pagination } from 'react-bootstrap'
 // Components
+import Card from '../components/Card/Card';
 
 const Search = () => {
   const [formState, setFormState] = useState({ name: '' });
@@ -41,44 +41,48 @@ const Search = () => {
       console.log(results)
       return (
         <>
-          <form onSubmit={handleFormSubmit}>
-            <input
-              placeholder="Enter your search here"
-              name="name"
-              type="name"
-              value={formState.name}
-              onChange={handleChange}
-            />
-            <button type="submit">
-              Submit
-            </button>
-          </form>
-          {results.map(e =>
-            < Card
-              multiverseid={e.multiverseid}
-              name={e.name}
-              manaCost={e.manaCost}
-              superTypes={e.superTypes}
-              rarity={e.rarity}
-              imageUrl={e.imageUrl}
-              text={e.text}
-            />)}
+          <Container>
+            <Form className='mb-5' onSubmit={handleFormSubmit}>
+              <Form.Control
+                placeholder="Enter your search here"
+                name="name"
+                type="name"
+                value={formState.name}
+                onChange={handleChange}
+              />
+              <Button type="submit">
+                Submit
+              </Button>
+            </Form>
+            <Row className='d-flex justify-content-center'>
+              {results.map(e =>
+                < Card
+                  multiverseid={e.multiverseid}
+                  name={e.name}
+                  manaCost={e.manaCost}
+                  superTypes={e.superTypes}
+                  rarity={e.rarity}
+                  imageUrl={e.imageUrl}
+                  text={e.text}
+                />)}
+            </Row>
+          </Container>
         </>
       )
     }
     return (
-      <form onSubmit={handleFormSubmit}>
-        <input
+      <Form className='mb-5' onSubmit={handleFormSubmit}>
+        <Form.Control
           placeholder="Enter your search here"
           name="name"
           type="name"
           value={formState.name}
           onChange={handleChange}
         />
-        <button type="submit">
+        <Button type="submit">
           Submit
-        </button>
-      </form>
+        </Button>
+      </Form>
     )
   }
   return (
