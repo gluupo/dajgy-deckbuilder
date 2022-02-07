@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Nav } from "react-bootstrap"
 
 import Auth from '../../utils/auth';
 
@@ -8,7 +9,7 @@ function Navbar() {
     event.preventDefault();
     Auth.logout();
   };
-  
+
   if (Auth.loggedIn()) {
     return (
       <>
@@ -24,14 +25,19 @@ function Navbar() {
   // If logged out show login controls
   return (
     <>
-      <Link to="/login">
-        Login
-      </Link>
-      <Link to="/signup">
-        Signup
-      </Link>
+      <div className="navbar-dark">
+        <Link to="/login">
+          Login
+        </Link>
+        <Link to="/signup">
+          Signup
+        </Link>
+        <Link to="/search">
+          Search
+        </Link>
+      </div>
     </>
   )
 }
 
-export default Navbar
+export default Navbar;
