@@ -18,6 +18,7 @@ const resolvers = {
     },
     search: async (_, args, context) => {
       const response = await card.where({ name: args.name });
+      console.log(response)
       return response.filter(e => e.imageUrl)
     }
   },

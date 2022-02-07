@@ -38,7 +38,6 @@ const Search = () => {
 
   const renderSearch = () => {
     if (results) {
-      console.log(results)
       return (
         <>
           <Container>
