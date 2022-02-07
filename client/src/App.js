@@ -16,6 +16,7 @@ import Search from './pages/Search';
 import Profile from './pages/Profile/Profile';
 import Header from './components/Header/index';
 import Footer from './components/Footer/index';
+import { DeckProvider } from './utils/GlobalState';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -46,28 +47,20 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <Header />
-          <div>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route exact path="/login">
-              <Login />
-            </Route>
-            <Route exact path="/signup">
-              <Signup />
-            </Route>
-            <Route exact path="/search">
-              <Search />
-            </Route>
-            <Route exact path="/me">
-              <Profile />
-            </Route>
-            <Route exact path="/users/:id">
-              <Profile />
-            </Route>
-          </div>
-          <Footer />
+          <DeckProvider>
+            <Header />
+            <div>
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/signup" component={Signup} />
+                <Route exact path="/search" component={Search} />
+                <Route exact path="/me" component={Profile} />
+                <Route exact path="/users/:id" component={Profile} />
+              </Switch>
+            </div>
+            <Footer />
+          </DeckProvider>
         </div>
       </Router>
     </ApolloProvider>
