@@ -3,10 +3,10 @@ import React from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 // Utilities
-import Auth from '../utils/auth';
-import { QUERY_USERS, QUERY_USER, QUERY_ME } from '../utils/queries';
+import Auth from '../../utils/auth';
+import { QUERY_USERS, QUERY_USER, QUERY_ME } from '../../utils/queries';
 // Components
-import UserList from '../components/UserList';
+import UserList from '../../components/UserList/';
 
 const Profile = () => {
   const { id } = useParams();
