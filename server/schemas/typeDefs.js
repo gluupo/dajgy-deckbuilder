@@ -12,7 +12,7 @@ const typeDefs = gql`
     token: ID!
     user: User
   }
-  type Card @cacheControl(maxAge:86400) {
+  type Card @cacheControl(maxAge:86400, scope: PUBLIC) {
     name: String!
     types: [String]!
     manaCost: String
@@ -33,7 +33,7 @@ const typeDefs = gql`
     addUser(email:String!, username:String!, password:String!): Auth
     login(email:String!, password:String!): Auth
   }
-  
+
   enum CacheControlScope {
   PUBLIC
   PRIVATE
