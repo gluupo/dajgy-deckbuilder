@@ -17,8 +17,8 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
     search: async (_, args, context) => {
-      console.log('lmao')
       const response = await card.where({ name: args.name });
+      console.log(response)
       return response.filter(e => e.imageUrl)
     }
   },
