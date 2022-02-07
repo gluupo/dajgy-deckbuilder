@@ -25,6 +25,10 @@ const resolvers = {
     getDeck: async (_, args, context) => {
       const deck = await Deck.findOne({ _id: args._id })
       return deck;
+    },
+    getUserDecks: async (_, args, context) => {
+      const user = await User.findOne({ _id: args.userId }).populate('decks')
+      return user.decks
     }
   },
 

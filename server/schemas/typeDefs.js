@@ -6,6 +6,7 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
+    decks: [Deck]
   }
 
   type Auth {
@@ -35,6 +36,7 @@ const typeDefs = gql`
     me: User
     search(name:String): [Card]
     getDeck(_id:ID!): Deck
+    getUserDecks(userId:ID!): [Deck]
   }
 
   type Mutation {
