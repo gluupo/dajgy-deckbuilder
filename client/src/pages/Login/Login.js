@@ -50,13 +50,13 @@ const Login = () => {
       )
     }
     return (
-      <div className="row justify-content-center align-items-center text-center col-11 col-lg-6 m-auto">
+      <div className="row justify-content-center text-center align-items-center col-11 col-lg-6 m-auto">
         <form
-          className="form container col-12 col-lg-9 bg-dark p-4 p-sm-5 rounded-3 m-2"
+          className="form container col-12 col-md-12 col-lg-10 bg-dark p-4 p-sm-5 rounded-3 m-2"
           onSubmit={handleFormSubmit}>
-          <h1 className='text-light'>Login</h1>
+          <h1 className='text-light mb-4'>Login</h1>
           <input
-            className="text-dark col-10 fs-5 border border-warning rounded-3 p-2 m-1"
+            className="text-dark col-9 fs-5 border border-warning rounded-3 p-2 m-1"
             placeholder="Your email"
             name="email"
             type="email"
@@ -64,8 +64,8 @@ const Login = () => {
             onChange={handleChange}
           />
           <input
-            className="text-dark col-10 fs-5 border border-warning rounded-3 p-2 m-1"
-            placeholder="******"
+            className="text-dark col-9 fs-5 border border-warning rounded-3 p-2 m-1"
+            placeholder="**********"
             name="password"
             type="password"
             value={formState.password}
@@ -73,7 +73,7 @@ const Login = () => {
           />
           <div>
             <button
-              className="col-6 btn btn-info btn-lg mt-4 fw-bold rounded-3"
+              className="text-center col-4 btn btn-info btn-lg mt-4 fw-bold rounded-5"
               type="button"
               onClick={handleFormSubmit}
               onChange={handleChange}
