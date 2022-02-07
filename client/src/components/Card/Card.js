@@ -17,7 +17,7 @@ const Card = (item) => {
   } = item;
 
 
-  const addToDeck = (id) => {
+  const addToDeck = () => {
     // const cardInDeck = deck.find((deckItem) => deckItem.multiverseid === multiverseid)
     // if (cardInDeck) {
     //   dispatch({

@@ -43,7 +43,7 @@ export const SEARCH = gql`
       multiverseid
     }
   }
-`
+`;
 
 export const GET_DECK = gql`
   query getDeck($_id:ID!) {
@@ -62,4 +62,23 @@ export const GET_DECK = gql`
       }
     }
   }
-`
+`;
+
+export const GET_USER_DECKS = gql`
+  query getUserDecks($userId:ID!) {
+    getUserDecks(userId:$userId){
+      _id
+  	  cards{
+      	name
+      	types
+      	manaCost
+      	superTypes
+      	rarity
+      	imageUrl
+      	text
+      	multiverseid
+      	cardCount	
+    }
+  }
+}
+`;
