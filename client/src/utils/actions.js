@@ -1,0 +1,8 @@
+export const UPDATE_CARDS = "UPDATE_CARDS";
+
+export const ADD_TO_DECK = "ADD_TO_DECK";
+export const ADD_MULTIPLE_TO_DECK = "ADD_MULTIPLE_TO_DECK";
+export const REMOVE_FROM_DECK = "REMOVE_FROM_DECK";
+export const CLEAR_DECK = "CLEAR_DECK";
+export const UPDATE_DECK_QUANTITY = "UPDATE_DECK_QUANTITY";
+export const TOGGLE_DECK = "TOGGLE_DECK";
