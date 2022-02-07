@@ -64,18 +64,8 @@ export const CREATE_DECK = gql`
 
 
 export const ADD_TO_DECK = gql`
-  mutation addToDeck($_id:ID!,
-   $multiverseid:String!, 
-   $text:String, 
-   $manaCost:String, 
-   $name:String!, 
-   $superTypes:[String], 
-   $rarity:String, 
-   $imageUrl:String!,
-   $types:[String]
-   ){
-    addToDeck(_id:$_id, multiverseid:$multiverseid, text:$text, manaCost:$manaCost, name:$name, superTypes:$superTypes, rarity:$rarity, imageUrl:$imageUrl, types:$types){
-      deck{
+  mutation addToDeck($input: DeckInput){
+    addToDeck(input: $input){
         _id
         cards{
           name
@@ -87,5 +77,5 @@ export const ADD_TO_DECK = gql`
           types
         }
       }
-    }
+    
   }`

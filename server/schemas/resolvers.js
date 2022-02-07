@@ -64,12 +64,12 @@ const resolvers = {
       // user.save();
       return deck
     },
-    addToDeck: async (_, args, context) => {
+    addToDeck: async (_, { input }, context) => {
       // if (context.user) {
       // const user = await User.findOne({ _id: context.user._id });
-      Object.keys(args).map(k => args[k] = typeof args[k] == 'string' ? args[k].trim() : args[k]);
-      console.log(args)
-      const deck = await Deck.findOneAndUpdate({ _id: args._id }, { $addToSet: { cards: { ...args } } }, { new: true });
+      Object.keys(input).map(k => input[k] = typeof input[k] == 'string' ? input[k].trim() : input[k]);
+      console.log(input)
+      const deck = await Deck.findOneAndUpdate({ _id: input._id }, { $addToSet: { cards: { ...input } } }, { new: true });
       return deck;
     },
   }
