@@ -15,7 +15,6 @@ const typeDefs = gql`
 
   type Deck {
     _id:ID
-    name:String
     cards:[Card]
   }
 
@@ -39,8 +38,8 @@ const typeDefs = gql`
   type Mutation {
     addUser(email:String!, username:String!, password:String!): Auth
     login(email:String!, password:String!): Auth
-    createDeck: Deck
-    addToDeck: Deck
+    createDeck: Deck,
+    addToDeck(_id:ID!, multiverseid:String!, text:String, manaCost:String, name:String!, superTypes:[String], rarity:String, imageUrl:String!, types:[String]): Deck
   }
 
   enum CacheControlScope {

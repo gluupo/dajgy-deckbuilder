@@ -48,16 +48,22 @@ const resolvers = {
       return { token, user };
     },
     createDeck: async (_, args, context) => {
-      if (context.user) {
-        const deck = await Deck.create({})
-        const user = await User.findOne({ _id: context.user._id })
-        user.decks.push(deck._id)
-        user.save();
-
-        return deck
-      }
-    }
+      // if (context.user) {
+      const deck = await Deck.create({});
+      // const user = await User.findOne({ _id: context.user._id });
+      // user.decks.push(deck._id);
+      // user.workingDeck = deck._id;
+      // user.save();
+      return deck
+    },
+    addToDeck: async (_, args, context) => {
+      // if (context.user) {
+      // const user = await User.findOne({ _id: context.user._id });
+      const deck = await Deck.findOneAndUpdate({ _id: args._id }, { $addToSet: { cards: { ...args } } }, { new: true });
+      return deck;
+    },
   }
-};
+}
+
 
 module.exports = resolvers;

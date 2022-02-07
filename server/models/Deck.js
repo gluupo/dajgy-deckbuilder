@@ -3,7 +3,6 @@ const { Schema, model } = require('mongoose');
 const deckSchema = new Schema({
   name: {
     type: String,
-    unique: true,
   },
   cards: [
     {
@@ -39,6 +38,9 @@ const deckSchema = new Schema({
       multiverseid: {
         type: String,
       },
+      cardCount: {
+        type: Number
+      }
     },
   ],
 });
