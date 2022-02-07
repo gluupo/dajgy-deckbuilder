@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLazyQuery } from '@apollo/client';
-import { Pagination, Row, Col, Form, Button, Container } from 'react-bootstrap'
+import { Row, Form, Button, Container } from 'react-bootstrap'
 // Utilities
 import { SEARCH } from '../utils/queries';
 // Components
