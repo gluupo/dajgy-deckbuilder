@@ -1,0 +1,11 @@
+.error {
+    font-size: 12px;
+    padding: 3px;
+    color: red;
+    visibility: hidden;
+    display: block;
+  }
+  
+  textarea:invalid[focused="true"]~.error, input:invalid[focused="true"]~.error {
+    visibility: unset;
+  }

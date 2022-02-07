@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../utils/mutations';
+import bootstrap from 'bootstrap/dist/css/bootstrap.min.css';
 
 import Auth from '../../utils/auth';
 
@@ -49,34 +50,51 @@ const Login = () => {
       )
     }
     return (
-      <form onSubmit={handleFormSubmit}>
-        <input
-          placeholder="Your email"
-          name="email"
-          type="email"
-          value={formState.email}
-          onChange={handleChange}
-        />
-        <input
-          placeholder="******"
-          name="password"
-          type="password"
-          value={formState.password}
-          onChange={handleChange}
-        />
-        <button type="submit">
-          Submit
-        </button>
-      </form>
+      <div className="row justify-content-center align-items-center text-center col-11 col-lg-6 m-auto">
+        <form
+          className="form container col-12 col-lg-9 bg-dark p-4 p-sm-5 rounded-3 m-2"
+          onSubmit={handleFormSubmit}>
+          <h1 className='text-light'>Login</h1>
+          <input
+            className="text-dark col-10 fs-5 border border-warning rounded-3 p-2 m-1"
+            placeholder="Your email"
+            name="email"
+            type="email"
+            value={formState.email}
+            onChange={handleChange}
+          />
+          <input
+            className="text-dark col-10 fs-5 border border-warning rounded-3 p-2 m-1"
+            placeholder="******"
+            name="password"
+            type="password"
+            value={formState.password}
+            onChange={handleChange}
+          />
+          <div>
+            <button
+              className="col-6 btn btn-info btn-lg mt-4 fw-bold rounded-3"
+              type="button"
+              onClick={handleFormSubmit}
+              onChange={handleChange}
+              id="submit"
+            >
+              Enter
+            </button>
+          </div>
+        </form>
+      </div>
     );
   };
 
   return (
     <main>
       <h4>Login</h4>
-      <div>
-        {renderForm()}
-        {error && <div>{error.message}</div>}
+      <div className="row text-center text-light">
+        <div>
+          {renderForm()}
+          {error && <div>{error.message}</div>}
+        </div>
       </div>
     </main>
   );
