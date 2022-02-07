@@ -18,7 +18,13 @@ const userSchema = new Schema({
     type: String,
     required: true,
     minlength: 5,
-  }
+  },
+  decks: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Deck'
+    }
+  ]
 });
 
 userSchema.pre('save', async function (next) {

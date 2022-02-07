@@ -1,8 +1,5 @@
-[
   {
-    "name": "Fun Deck"
-  },
-  {
+    "name": "Fun Deck",
     "card": [
       {
         "name": "Kamahl, Pit Fighter",
@@ -955,4 +952,3 @@
       }
     ]
   }
-]
