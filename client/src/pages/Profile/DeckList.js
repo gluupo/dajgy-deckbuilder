@@ -4,7 +4,7 @@ import { ListGroup, Button } from 'react-bootstrap'
 import { EDIT_DECK } from '../../utils/mutations';
 import { useMutation } from '@apollo/client';
 
-const DeckList = ({ deck }) => {
+const DeckList = (deck) => {
     const [editDeck, { error, data }] = useMutation(EDIT_DECK);
     console.log("DECK: ", deck)
 
@@ -19,7 +19,7 @@ const DeckList = ({ deck }) => {
     }
 
     return (
-        <ListGroup.Item action >
+        <ListGroup.Item>
             {deck.name}
             <Button onClick={viewDeckDetails}>view</Button>
             <Button onClick={editDeckHandler}>edit</Button>
