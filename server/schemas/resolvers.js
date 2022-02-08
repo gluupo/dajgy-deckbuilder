@@ -9,11 +9,11 @@ const resolvers = {
       return User.find();
     },
     user: async (_, args) => {
-      return User.findOne({ _id: args.id });
+      return User.findOne({ _id: args.id }).populate('decks');
     },
     me: async (_, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id });
+        return User.findOne({ _id: context.user._id }).populate('decks');
       }
       throw new AuthenticationError('You need to be logged in!');
     },
@@ -27,7 +27,7 @@ const resolvers = {
       return deck;
     },
     getUserDecks: async (_, args, context) => {
-      const user = await User.findOne({ _id: args.userId }).populate('decks')
+      const user = await User.findOne({ _id: args.userId })
       return user.decks
     }
   },
@@ -68,8 +68,17 @@ const resolvers = {
       // if (context.user) {
       // const user = await User.findOne({ _id: context.user._id });
       Object.keys(input).map(k => input[k] = typeof input[k] == 'string' ? input[k].trim() : input[k]);
-      console.log(input)
-      const deck = await Deck.findOneAndUpdate({ _id: input._id }, { $addToSet: { cards: { ...input } } }, { new: true });
+      const deck = await Deck.findOne({ _id: input._id })
+      const exists = deck.cards.some((obj) => obj.multiverseid === input.multiverseid)
+      console.log(exists)
+      if (!exists) {
+        deck.cards.push({ ...input })
+      }
+      else {
+
+      }
+      // const card = await Deck.findOnean
+      // const deck = await Deck.findOneAndUpdate({ _id: input._id }, { $addToSet: { cards: { ...input } } }, { new: true });
       return deck;
     },
   }
