@@ -63,6 +63,14 @@ export const CREATE_DECK = gql`
   }
 `;
 
+export const EDIT_DECK = gql`
+  mutation editDeck($deckId: ID!){
+    editDeck(deckId: $deckId){
+      _id
+    }
+  }
+`;
+
 
 export const ADD_TO_DECK = gql`
   mutation addToDeck($input: DeckInput){
