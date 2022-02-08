@@ -26,10 +26,6 @@ const resolvers = {
       const deck = await Deck.findOne({ _id: args._id })
       return deck;
     },
-    getUserDecks: async (_, args, context) => {
-      const user = await User.findOne({ _id: args.userId })
-      return user.decks
-    }
   },
 
   Mutation: {
@@ -56,33 +52,39 @@ const resolvers = {
       return { token, user };
     },
     createDeck: async (_, args, context) => {
-      // if (context.user) {
-      const deck = await Deck.create({});
-      // const user = await User.findOne({ _id: context.user._id });
-      // user.decks.push(deck._id);
-      // user.workingDeck = deck._id;
-      // user.save();
-      return deck
+      if (context.user) {
+        const deck = await Deck.create({});
+        const user = await User.findOne({ _id: context.user._id });
+        user.decks.push(deck._id);
+        user.workingDeck = deck._id;
+        user.save();
+        return deck
+      }
     },
     addToDeck: async (_, { input }, context) => {
-      // if (context.user) {
-      // const user = await User.findOne({ _id: context.user._id });
-      Object.keys(input).map(k => input[k] = typeof input[k] == 'string' ? input[k].trim() : input[k]);
-      const deck = await Deck.findOne({ _id: input._id })
-      const exists = deck.cards.some((obj) => obj.multiverseid === input.multiverseid)
-      console.log(exists)
-      if (!exists) {
-        deck.cards.push({ ...input })
+      if (context.user) {
+        const user = await User.findOne({ _id: context.user._id });
+        Object.keys(input).map(k => input[k] = typeof input[k] == 'string' ? input[k].trim() : input[k]);
+        const deck = await Deck.findOne({ _id: user.workingDeck })
+        const exists = deck.cards.some((obj) => obj.multiverseid === input.multiverseid)
+        console.log(exists)
+        if (!exists) {
+          deck.cards.push({ ...input })
+        }
+        else {
+          for (let i = 0; i < deck.cards.length; i++) {
+            if (deck.cards[i].multiverseid === input.multiverseid) {
+              if (deck.cards[i].supertypes && deck.cards[i].supertypes.some(str => str === 'Legendary') && deck.cards[i].cardCount < 2)
+                deck.cards[i].cardCount++
+            } else if (deck.cards[i].cardCount < 5)
+              deck.cards[i].cardCount++
+          }
+        }
+        deck.save()
+        return deck;
       }
-      else {
-
-      }
-      // const card = await Deck.findOnean
-      // const deck = await Deck.findOneAndUpdate({ _id: input._id }, { $addToSet: { cards: { ...input } } }, { new: true });
-      return deck;
     },
   }
 }
-
 
 module.exports = resolvers;

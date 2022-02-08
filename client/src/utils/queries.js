@@ -22,7 +22,7 @@ export const QUERY_USER = gql`
         	name
         	types
         	manaCost
-        	superTypes
+        	supertypes
         	rarity
         	imageUrl
         	text
@@ -50,7 +50,7 @@ export const SEARCH = gql`
       name
       types
       manaCost
-      superTypes
+      supertypes
       rarity
       imageUrl
       text
@@ -67,7 +67,7 @@ export const GET_DECK = gql`
         name
         types
         manaCost
-        superTypes
+        supertypes
         rarity
         imageUrl
         text
@@ -78,9 +78,3 @@ export const GET_DECK = gql`
   }
 `;
 
-export const GET_USER_DECKS = gql`
-  query getUserDecks($userId:ID!) {
-    getUserDecks(userId:$userId)
-  }
-}
-`;
