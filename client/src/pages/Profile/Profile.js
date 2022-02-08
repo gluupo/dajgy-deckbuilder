@@ -107,6 +107,8 @@ const Profile = () => {
           </h2>
           {renderCurrentUserInfo()}
           {renderUserList()}
+          {renderCreateButton()}
+          {renderDeckList()}
         </div>
       </div>
 
