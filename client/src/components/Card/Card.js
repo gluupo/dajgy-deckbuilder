@@ -48,7 +48,7 @@ const Card = (item) => {
   }
 
   return (
-    <Col xs={3} key={multiverseid} style={divStyle} className='mb-3' onClick={() => addToDeck(multiverseid)}>
+    <Col xs={12} sm={6} md={3} key={multiverseid} style={divStyle} className='mb-3' onClick={() => addToDeck(multiverseid)}>
     </Col>
   )
 }
