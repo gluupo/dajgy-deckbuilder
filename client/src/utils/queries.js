@@ -16,6 +16,20 @@ export const QUERY_USER = gql`
       _id
       username
       email
+      decks {
+        _id
+  	    cards{
+        	name
+        	types
+        	manaCost
+        	superTypes
+        	rarity
+        	imageUrl
+        	text
+        	multiverseid
+        	cardCount	
+        }
+      }
     }
   }
 `;
@@ -66,19 +80,7 @@ export const GET_DECK = gql`
 
 export const GET_USER_DECKS = gql`
   query getUserDecks($userId:ID!) {
-    getUserDecks(userId:$userId){
-      _id
-  	  cards{
-      	name
-      	types
-      	manaCost
-      	superTypes
-      	rarity
-      	imageUrl
-      	text
-      	multiverseid
-      	cardCount	
-    }
+    getUserDecks(userId:$userId)
   }
 }
 `;
