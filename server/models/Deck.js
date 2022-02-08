@@ -20,7 +20,7 @@ const deckSchema = new Schema({
       manaCost: {
         type: String,
       },
-      superTypes: [
+      supertypes: [
         {
           type: String,
         }

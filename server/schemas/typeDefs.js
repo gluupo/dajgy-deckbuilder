@@ -23,7 +23,7 @@ const typeDefs = gql`
     name: String!
     types: [String]!
     manaCost: String
-    superTypes:[String]
+    supertypes:[String]
     rarity: String
     imageUrl: String!
     text: String
@@ -45,7 +45,7 @@ const typeDefs = gql`
     text:String,
     manaCost:String,
     name:String!,
-    superTypes:[String],
+    supertypes:[String],
     rarity:String,
     imageUrl:String!,
     types:[String],
