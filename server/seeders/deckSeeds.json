@@ -7,7 +7,9 @@
           "Creature"
         ],
         "manaCost": "{4}{R}{R}",
-        "superTypes": null,
+        "supertypes": [
+          "Legendary"
+        ],
         "rarity": "Rare",
         "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=29963&type=card",
         "text": "Haste (This creature can attack and {T} as soon as it comes under your control.)\n{T}: Kamahl, Pit Fighter deals 3 damage to any target.",
@@ -20,7 +22,7 @@
           "Enchantment"
         ],
         "manaCost": "{1}{R}",
-        "superTypes": null,
+        "supertypes": null,
         "rarity": "Common",
         "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=29761&type=card",
         "text": "Enchant creature\nEnchanted creature has first strike.\nThreshold — Enchanted creature gets +3/+0 as long as seven or more cards are in your graveyard.",
