@@ -47,32 +47,45 @@ const Signup = () => {
       )
     }
     return (
-      <form onSubmit={handleFormSubmit}>
-        <input
-          placeholder="Your username"
-          name="username"
-          type="text"
-          value={formState.name}
-          onChange={handleChange}
-        />
-        <input
-          placeholder="Your email"
-          name="email"
-          type="email"
-          value={formState.email}
-          onChange={handleChange}
-        />
-        <input
-          placeholder="******"
-          name="password"
-          type="password"
-          value={formState.password}
-          onChange={handleChange}
-        />
-        <button type="submit">
-          Submit
-        </button>
-      </form>
+      <div className="row justify-content-center text-center align-items-center col-11 col-lg-6 m-auto">
+        <form className="form container col-12 col-md-12 col-lg-10 bg-dark p-4 p-sm-5 rounded-3 m-2"
+          onSubmit={handleFormSubmit}>
+          <h1 className='text-light mb-4'>Sign Up</h1>
+          <input
+            className="text-dark col-9 fs-5 border border-warning rounded-3 p-2 m-1"
+            placeholder="Username"
+            name="username"
+            type="text"
+            value={formState.name}
+            onChange={handleChange}
+          />
+          <input
+            className="text-dark col-9 fs-5 border border-warning rounded-3 p-2 m-1"
+            placeholder="Email"
+            name="email"
+            type="email"
+            value={formState.email}
+            onChange={handleChange}
+          />
+          <input
+            className="text-dark col-9 fs-5 border border-warning rounded-3 p-2 m-1"
+            placeholder="Password"
+            name="password"
+            type="password"
+            value={formState.password}
+            onChange={handleChange}
+          />
+          <button
+            className="text-center col-4 btn btn-info btn-lg mt-4 fw-bold rounded-5"
+            type="submit"
+            type="button"
+            onClick={handleFormSubmit}
+            onChange={handleChange}
+            id="submit">
+            Submit
+          </button>
+        </form>
+      </div>
     );
   };
 
