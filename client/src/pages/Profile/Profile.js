@@ -32,9 +32,9 @@ const Profile = () => {
   if (error) console.log(error);
 
   // redirect to personal profile page if username is yours
-  // if (Auth.loggedIn() && Auth.getProfile().data._id === id) {
-  //   return <Redirect to="/me" />;
-  // }
+  if (Auth.loggedIn() && Auth.getProfile().data._id === id) {
+    return <Redirect to="/me" />;
+  }
 
   if (loading) {
     return <h4>Loading...</h4>;
@@ -73,6 +73,8 @@ const Profile = () => {
       )
     }
   }
+
+  console.log(user.decks)
 
   const renderDeckList = () => {
     if (!user.decks.length) {
