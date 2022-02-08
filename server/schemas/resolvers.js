@@ -84,6 +84,17 @@ const resolvers = {
         return deck;
       }
     },
+    editDeck: async (_, args, context) => {
+      if (context.user) {
+        const user = await User.findOne({ _id: context.user._id });
+        const exists = user.decks.includes(args.deckId)
+        if (exists) {
+          user.workingDeck = args.deckId
+          const deck = await Deck.findOne({ _id: args.deckId })
+          return deck;
+        }
+      }
+    }
   }
 }
 
