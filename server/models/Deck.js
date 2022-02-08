@@ -5,6 +5,30 @@ const deckSchema = new Schema(
     name: {
       type: String,
     },
+    lands: [
+      {
+        swamp: {
+          type: Number,
+          default: 0
+        },
+        mountain: {
+          type: Number,
+          default: 0
+        },
+        plain: {
+          type: Number,
+          default: 0
+        },
+        forest: {
+          type: Number,
+          default: 0
+        },
+        island: {
+          type: Number,
+          default: 0
+        },
+      }
+    ],
     cards: [
       {
         name: {
