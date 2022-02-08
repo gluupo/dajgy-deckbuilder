@@ -58,10 +58,14 @@ const Profile = () => {
   const renderCurrentUserInfo = () => {
     if (id) return null;
     return (
-      <ul>
-        <li>username: {user.username}</li>
-        <li>email: {user.email}</li>
-      </ul>
+      <Container
+        style={{ width: '20rem', height: '100%' }}
+        className='bg-light rounded-3 p-3 pb-1'>
+        <ul>
+          <li>username: {user.username}</li>
+          <li>email: {user.email}</li>
+        </ul>
+      </Container>
     );
   }
 
@@ -80,18 +84,7 @@ const Profile = () => {
       <Container>
         <Row>
           <Col>
-            <Form className='mb-5' >
-              <Form.Control
-                placeholder="Enter your search here"
-                name="name"
-                type="name"
-              />
-              <Button type="submit">
-                Submit
-              </Button>
-            </Form>
-
-            <Card style={{ width: '18rem' }}>
+            <Card style={{ width: '18rem', height: '100%' }}>
               <Card.Body>
                 <Card.Title>deck1 exp..</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
@@ -108,20 +101,6 @@ const Profile = () => {
             </Card>
           </Col>
         </Row>
-
-        <Card>
-          <Card.Body>
-            <blockquote className="blockquote mb-0">
-              <p>
-                footer
-              </p>
-              <footer className="blockquote-footer">
-                footer
-              </footer>
-            </blockquote>
-          </Card.Body>
-        </Card>
-
       </Container>
     </>
   );
