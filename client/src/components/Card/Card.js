@@ -9,7 +9,7 @@ const Card = (item) => {
     name,
     types,
     manaCost,
-    superTypes,
+    supertypes,
     rarity,
     imageUrl,
     text,
@@ -18,24 +18,7 @@ const Card = (item) => {
 
 
   const addToDeck = () => {
-    // const cardInDeck = deck.find((deckItem) => deckItem.multiverseid === multiverseid)
-    // if (cardInDeck) {
-    //   dispatch({
-    //     type: UPDATE_DECK_QUANTITY,
-    //     multiverseid: multiverseid,
-    //     cardQuantity: parseInt(cardInDeck.cardQuantity) + 1
-    //   });
-    //   idbPromise('deck', 'put', {
-    //     ...cardInDeck,
-    //     cardQuantity: parseInt(cardInDeck.cardQuantity) + 1
-    //   });
-    // } else {
-    //   dispatch({
-    //     type: ADD_TO_DECK,
-    //     product: { ...item, cardQuantity: 1 }
-    //   });
-    //   idbPromise('deck', 'add', { ...item, cardQuantity: 1 });
-    // }
+
   }
 
 
@@ -46,6 +29,8 @@ const Card = (item) => {
     backgroundPosition: 'center',
     minHeight: '360px'
   }
+
+  console.log(item)
 
   return (
     <Col xs={3} key={multiverseid} style={divStyle} alt={`${name} ${manaCost} \n${text}`} title={`${name} ${manaCost} \n${text}`} className='mb-3' onClick={() => addToDeck(multiverseid)}>

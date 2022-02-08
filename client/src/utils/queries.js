@@ -22,7 +22,7 @@ export const QUERY_USER = gql`
         	name
         	types
         	manaCost
-        	superTypes
+        	supertypes
         	rarity
         	imageUrl
         	text
@@ -50,7 +50,7 @@ export const SEARCH = gql`
       name
       types
       manaCost
-      superTypes
+      supertypes
       rarity
       imageUrl
       text
@@ -67,7 +67,7 @@ export const GET_DECK = gql`
         name
         types
         manaCost
-        superTypes
+        supertypes
         rarity
         imageUrl
         text
@@ -76,4 +76,9 @@ export const GET_DECK = gql`
       }
     }
   }
+<<<<<<< HEAD
 `;
+=======
+`;
+
+>>>>>>> 8cb0c677657e95842ccba4696c6eb45f1b566958
