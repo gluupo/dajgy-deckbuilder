@@ -7,6 +7,7 @@ const typeDefs = gql`
     email: String
     password: String
     decks: [Deck]
+    workingDeck: String
   }
 
   type Auth {
@@ -23,7 +24,7 @@ const typeDefs = gql`
     name: String!
     types: [String]!
     manaCost: String
-    superTypes:[String]
+    supertypes:[String]
     rarity: String
     imageUrl: String!
     text: String
@@ -45,7 +46,7 @@ const typeDefs = gql`
     text:String,
     manaCost:String,
     name:String!,
-    superTypes:[String],
+    supertypes:[String],
     rarity:String,
     imageUrl:String!,
     types:[String],
@@ -57,6 +58,7 @@ const typeDefs = gql`
     login(email:String!, password:String!): Auth
     createDeck: Deck,
     addToDeck(input: DeckInput): Deck
+    editDeck(deckId: String): Deck
   }
 
 

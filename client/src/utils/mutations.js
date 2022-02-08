@@ -53,14 +53,23 @@ export const ADD_COMMENT = gql`
       }
     }
   }
-`
+`;
 
 export const CREATE_DECK = gql`
   mutation createDeck{
     createDeck{
       _id
     }
-}`;
+  }
+`;
+
+export const EDIT_DECK = gql`
+  mutation editDeck($deckId: ID!){
+    editDeck(deckId: $deckId){
+      _id
+    }
+  }
+`;
 
 
 export const ADD_TO_DECK = gql`
@@ -75,7 +84,8 @@ export const ADD_TO_DECK = gql`
           superTypes
           rarity
           types
-        }
+          cardCount
       }
-    
-  }`
+    }
+  }
+`;
