@@ -1,48 +1,81 @@
 const { Schema, model } = require('mongoose');
 
-const deckSchema = new Schema({
-  name: {
-    type: String,
-  },
-  cards: [
-    {
-      name: {
-        type: String,
-        required: true,
-        unique: true,
-      },
-      types: [
-        {
+const deckSchema = new Schema(
+  {
+    name: {
+      type: String,
+    },
+    lands: [
+      {
+        swamp: {
+          type: Number,
+          default: 0
+        },
+        mountain: {
+          type: Number,
+          default: 0
+        },
+        plain: {
+          type: Number,
+          default: 0
+        },
+        forest: {
+          type: Number,
+          default: 0
+        },
+        island: {
+          type: Number,
+          default: 0
+        },
+      }
+    ],
+    cards: [
+      {
+        name: {
           type: String,
           required: true,
-        }
-      ],
-      manaCost: {
-        type: String,
-      },
-      supertypes: [
-        {
+          unique: true,
+        },
+        types: [
+          {
+            type: String,
+            required: true,
+          }
+        ],
+        manaCost: {
+          type: String,
+        },
+        supertypes: [
+          {
+            type: String,
+          }
+        ],
+        rarity: {
+          type: String,
+        },
+        imageUrl: {
+          type: String,
+          required: true,
+        },
+        text: {
+          type: String,
+        },
+        multiverseid: {
           type: String,
         }
-      ],
-      rarity: {
-        type: String,
       },
-      imageUrl: {
-        type: String,
-        required: true,
-      },
-      text: {
-        type: String,
-      },
-      multiverseid: {
-        type: String,
-      },
-      cardCount: {
-        type: Number
-      }
+    ],
+  },
+  {
+    toJSON: {
+      virtuals: true,
     },
-  ],
+    id: false
+  }
+);
+
+deckSchema.virtual('cardCount').get(function () {
+  return this.cards.length;
 });
 
 const Deck = model('Deck', deckSchema);
