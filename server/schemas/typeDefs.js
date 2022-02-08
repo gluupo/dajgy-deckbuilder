@@ -7,6 +7,7 @@ const typeDefs = gql`
     email: String
     password: String
     decks: [Deck]
+    workingDeck: String
   }
 
   type Auth {
@@ -57,6 +58,7 @@ const typeDefs = gql`
     login(email:String!, password:String!): Auth
     createDeck: Deck,
     addToDeck(input: DeckInput): Deck
+    editDeck(deckId: String): Deck
   }
 
 
