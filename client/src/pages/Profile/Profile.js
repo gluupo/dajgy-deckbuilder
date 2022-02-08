@@ -79,7 +79,7 @@ const Profile = () => {
 
       <Container>
         <Row>
-          <Col>
+          <Col lg="9">
             <Form className='mb-5' >
               <Form.Control
                 placeholder="Enter your search here"
@@ -99,8 +99,8 @@ const Profile = () => {
             </Card>
 
           </Col>
-          <Col xs lg="2">
-            <Card style={{ width: '18rem', height: '100%' }}>
+          <Col xs lg="3">
+            <Card style={{ height: '100vh' }}>
               <Card.Body>
                 <Card.Title>Current Deck</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">being built</Card.Subtitle>
@@ -108,23 +108,33 @@ const Profile = () => {
             </Card>
           </Col>
         </Row>
-
-        <Card>
-          <Card.Body>
-            <blockquote className="blockquote mb-0">
-              <p>
-                footer
-              </p>
-              <footer className="blockquote-footer">
-                footer
-              </footer>
-            </blockquote>
-          </Card.Body>
-        </Card>
-
       </Container>
+
+      <Container fluid>
+        <Row>
+          <Col lg="12">
+            <Card>
+              <Card.Body>
+                <blockquote className="blockquote mb-0">
+                  <p>
+                    footer
+                  </p>
+                  <footer className="blockquote-footer">
+                    footer
+                  </footer>
+                </blockquote>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+
     </>
   );
 };
 
 export default Profile;
+
+
+// style={{ width: '100%' }}
+// style={{ width: '18rem', height: '100vh' }}
