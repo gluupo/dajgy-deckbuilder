@@ -46,22 +46,20 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div>
+        <div className='min-vh-100 d-flex flex-column'>
           <Header />
-          <div>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/signup" component={Signup} />
-              <Route exact path="/search" component={Search} />
-              <Route exact path="/me" component={Profile} />
-              <Route exact path="/users/:id" component={Profile} />
-            </Switch>
-          </div>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/search" component={Search} />
+            <Route exact path="/me" component={Profile} />
+            <Route exact path="/users/:id" component={Profile} />
+          </Switch>
           <Footer />
         </div>
       </Router>
-    </ApolloProvider>
+    </ApolloProvider >
   );
 }
 

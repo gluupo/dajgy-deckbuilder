@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLazyQuery } from '@apollo/client';
 import { Row, Form, Button, Container } from 'react-bootstrap'
+import bootstrap from 'bootstrap/dist/css/bootstrap.min.css';
 // Utilities
 import { SEARCH } from '../utils/queries';
 // Components
@@ -40,48 +41,67 @@ const Search = () => {
     if (results) {
       return (
         <>
-          <Container>
-            <Form className='mb-5' onSubmit={handleFormSubmit}>
-              <Form.Control
-                placeholder="Enter your search here"
-                name="name"
-                type="name"
-                value={formState.name}
-                onChange={handleChange}
-              />
-              <Button type="submit">
-                Submit
-              </Button>
-            </Form>
-            <Row className='d-flex justify-content-center'>
-              {results.map(e =>
-                < Card
-                  multiverseid={e.multiverseid}
-                  name={e.name}
-                  manaCost={e.manaCost}
-                  superTypes={e.superTypes}
-                  rarity={e.rarity}
-                  imageUrl={e.imageUrl}
-                  text={e.text}
-                />)}
+          <Container className="mt-5">
+            <Row className="rounded-3 d-flex justify-content-center text-center align-items-center col-11 m-auto bg-dark">
+              <Form className="col-12 col-lg-10 bg-dark p-4 p-sm-5 rounded-3 m-2" onSubmit={handleFormSubmit}>
+                <h1 className='text-light mb-4'>Search</h1>
+                <Form.Control
+                  className="text-dark col-9 fs-6 border border-warning rounded-3 p-2 m-1"
+                  placeholder="Your card search here"
+                  name="name"
+                  type="name"
+                  value={formState.name}
+                  onChange={handleChange}
+                />
+                <Button
+                  variant="outline-light"
+                  size="lg"
+                  className="text-center px-5 mt-4 fw-bold rounded-5"
+                  type="submit"
+                  id="submit">
+                  Enter
+                </Button>
+              </Form>
+              <Row className='d-flex justify-content-center col-sm-12'>
+                {results.map(e =>
+                  < Card
+                    multiverseid={e.multiverseid}
+                    name={e.name}
+                    manaCost={e.manaCost}
+                    superTypes={e.superTypes}
+                    rarity={e.rarity}
+                    imageUrl={e.imageUrl}
+                    text={e.text}
+                  />)}
+              </Row>
             </Row>
           </Container>
         </>
       )
     }
     return (
-      <Form className='mb-5' onSubmit={handleFormSubmit}>
-        <Form.Control
-          placeholder="Enter your search here"
-          name="name"
-          type="name"
-          value={formState.name}
-          onChange={handleChange}
-        />
-        <Button type="submit">
-          Submit
-        </Button>
-      </Form>
+      <Container className='flex-fill d-flex'>
+        <Row className="justify-content-center text-center align-items-center m-auto bg-dark">
+          <Form className="col-12 col-lg-10 bg-dark p-4 p-sm-5 rounded-3 m-2" onSubmit={handleFormSubmit}>
+            <h1 className='text-light mb-4'>Search</h1>
+            <Form.Control
+              placeholder="Your card search here"
+              name="name"
+              type="name"
+              value={formState.name}
+              onChange={handleChange}
+            />
+            <Button
+              variant="outline-light"
+              size="lg"
+              className="text-center px-5 mt-4 fw-bold rounded-5"
+              type="submit"
+              id="submit">
+              Enter
+            </Button>
+          </Form>
+        </Row>
+      </Container>
     )
   }
   return (

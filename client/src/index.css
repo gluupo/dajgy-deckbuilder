@@ -10,6 +10,8 @@ html, * {
 body {
   background-image: url(./pages/Home/styles/assets/bg.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 h1, #submit {
