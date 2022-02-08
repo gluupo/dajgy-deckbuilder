@@ -25,7 +25,7 @@ const Home = () => {
   }
 
   return (
-    <main>
+    <>
       <div className="" id="bg"></div>
       <div>
         {renderUsername()}
@@ -33,7 +33,7 @@ const Home = () => {
       <div>
         {renderUserList()}
       </div>
-    </main>
+    </>
   );
 };
 
