@@ -17,3 +17,7 @@ body {
 h1, #submit {
   font-family: 'Rubik Mono One', sans-serif;
 }
+
+#bg-card {
+  opacity: 97%;
+}

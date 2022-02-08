@@ -1,5 +1,9 @@
-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
+.footer {
+    min-width: 100%;
+    margin-top: auto !important;
+    opacity: 60%;
+}
+
+.footer p {
+    font-size: 14px;
 }
