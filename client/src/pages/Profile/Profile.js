@@ -59,10 +59,14 @@ const Profile = () => {
   const renderCurrentUserInfo = () => {
     if (id) return null;
     return (
-      <ul>
-        <li>username: {user.username}</li>
-        <li>email: {user.email}</li>
-      </ul>
+      <Container
+        style={{ width: '20rem', height: '100%' }}
+        className='bg-light rounded-3 p-3 pb-1'>
+        <ul>
+          <li>username: {user.username}</li>
+          <li>email: {user.email}</li>
+        </ul>
+      </Container>
     );
   };
 
@@ -109,9 +113,14 @@ const Profile = () => {
       <Container>
         <Row>
           <Col>
-            {renderCreateButton()}
-          </Col>
+            <Card style={{ width: '18rem', height: '100%' }}>
+              <Card.Body>
+                <Card.Title>deck1 exp..</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
+              </Card.Body>
+            </Card>
 
+          </Col>
           <Col xs lg="2">
             <Card style={{ width: '18rem', height: '100%' }}>
               <Card.Body>
@@ -121,9 +130,6 @@ const Profile = () => {
             </Card>
           </Col>
         </Row>
-
-        {renderDeckList()}
-
       </Container>
     </>
   );
