@@ -77,10 +77,3 @@ export const GET_DECK = gql`
     }
   }
 `;
-
-export const GET_USER_DECKS = gql`
-  query getUserDecks($userId:ID!) {
-    getUserDecks(userId:$userId)
-  }
-}
-`;

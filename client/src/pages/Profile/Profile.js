@@ -1,18 +1,15 @@
 // Node Modules
 import React from 'react';
 import { Redirect, useParams } from 'react-router-dom';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Card from 'react-bootstrap/Card';
-import { useQuery } from '@apollo/client';
+import { ListGroup, Row, Col, Button, Container, Card } from 'react-bootstrap';
+import { useQuery, useMutation } from '@apollo/client';
 // Utilities
 import Auth from '../../utils/auth';
 import { QUERY_USERS, QUERY_USER, QUERY_ME } from '../../utils/queries';
+import { CREATE_DECK } from '../../utils/mutations';
 // Components
 import UserList from '../../components/UserList/';
+import DeckList from './DeckList';
 
 const Profile = () => {
   const { id } = useParams();
@@ -25,15 +22,19 @@ const Profile = () => {
   // Get a list of all users
   const { usersLoading, data: usersData } = useQuery(QUERY_USERS);
 
+  // Create a new deck attached to current user
+  const [createDeck, { deckError, newDeckData }] = useMutation(CREATE_DECK);
+  //TODO: set current deck to new
+
   const user = data?.me || data?.user || {};
   const users = usersData?.users || [];
 
   if (error) console.log(error);
 
   // redirect to personal profile page if username is yours
-  if (Auth.loggedIn() && Auth.getProfile().data._id === id) {
-    return <Redirect to="/me" />;
-  }
+  // if (Auth.loggedIn() && Auth.getProfile().data._id === id) {
+  //   return <Redirect to="/me" />;
+  // }
 
   if (loading) {
     return <h4>Loading...</h4>;
@@ -63,7 +64,33 @@ const Profile = () => {
         <li>email: {user.email}</li>
       </ul>
     );
+  };
+
+  const renderCreateButton = () => {
+    if (Auth.loggedIn() && Auth.getProfile().data._id === id) {
+      return (
+        <Button variant="outline-light" onClick={createDeck}>Create Deck</Button>
+      )
+    }
   }
+
+  const renderDeckList = () => {
+    if (!user.decks.length) {
+      return (
+        <h4>No Decks Created</h4>
+      )
+    } else {
+      return (
+        <ListGroup defaultActiveKey="key">
+          {
+            user.decks.map(deck => (
+              <DeckList {...deck} />
+            ))
+          }
+        </ListGroup>
+      )
+    }
+  };
 
   return (
     <>
@@ -80,25 +107,9 @@ const Profile = () => {
       <Container>
         <Row>
           <Col>
-            <Form className='mb-5' >
-              <Form.Control
-                placeholder="Enter your search here"
-                name="name"
-                type="name"
-              />
-              <Button type="submit">
-                Submit
-              </Button>
-            </Form>
-
-            <Card style={{ width: '18rem' }}>
-              <Card.Body>
-                <Card.Title>deck1 exp..</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
-              </Card.Body>
-            </Card>
-
+            {renderCreateButton()}
           </Col>
+
           <Col xs lg="2">
             <Card style={{ width: '18rem', height: '100%' }}>
               <Card.Body>
@@ -109,18 +120,7 @@ const Profile = () => {
           </Col>
         </Row>
 
-        <Card>
-          <Card.Body>
-            <blockquote className="blockquote mb-0">
-              <p>
-                footer
-              </p>
-              <footer className="blockquote-footer">
-                footer
-              </footer>
-            </blockquote>
-          </Card.Body>
-        </Card>
+        {renderDeckList()}
 
       </Container>
     </>

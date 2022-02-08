@@ -26,10 +26,6 @@ const resolvers = {
       const deck = await Deck.findOne({ _id: args._id })
       return deck;
     },
-    getUserDecks: async (_, args, context) => {
-      const user = await User.findOne({ _id: args.userId })
-      return user.decks
-    }
   },
 
   Mutation: {
