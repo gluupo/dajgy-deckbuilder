@@ -41,9 +41,12 @@ const Search = () => {
     if (results) {
       return (
         <>
-          <Container className="mt-5">
-            <Row className="rounded-3 d-flex justify-content-center text-center align-items-center col-11 m-auto bg-dark">
-              <Form className="col-12 col-lg-10 bg-dark p-4 p-sm-5 rounded-3 m-2" onSubmit={handleFormSubmit}>
+          <Container
+            className="mt-5 mb-5">
+            <Row
+              className="rounded-3 d-flex justify-content-center text-center align-items-center col-11 m-auto bg-dark" id="bg-card">
+              <Form
+                className="col-12 col-lg-10 bg-dark p-4 p-sm-5 rounded-3 m-2" onSubmit={handleFormSubmit}>
                 <h1 className='text-light mb-4'>Search</h1>
                 <Form.Control
                   className="text-dark col-9 fs-6 border border-warning rounded-3 p-2 m-1"
@@ -62,7 +65,8 @@ const Search = () => {
                   Enter
                 </Button>
               </Form>
-              <Row className='d-flex justify-content-center col-sm-12'>
+              <Row
+                className='d-flex justify-content-center col-sm-12'>
                 {results.map(e =>
                   < Card
                     multiverseid={e.multiverseid}
@@ -80,10 +84,15 @@ const Search = () => {
       )
     }
     return (
-      <Container className='flex-fill d-flex'>
-        <Row className="justify-content-center text-center align-items-center m-auto bg-dark">
-          <Form className="col-12 col-lg-10 bg-dark p-4 p-sm-5 rounded-3 m-2" onSubmit={handleFormSubmit}>
-            <h1 className='text-light mb-4'>Search</h1>
+      <Container
+        className='flex-fill d-flex mb-5'>
+        <Row
+          className="justify-content-center text-center align-items-center m-auto bg-dark">
+          <Form
+            className="col-12 col-lg-10 bg-dark p-4 p-sm-5 rounded-3 m-2"
+            onSubmit={handleFormSubmit}>
+            <h1
+              className='text-light mb-4'>Search</h1>
             <Form.Control
               placeholder="Your card search here"
               name="name"

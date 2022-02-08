@@ -9,3 +9,7 @@
   textarea:invalid[focused="true"]~.error, input:invalid[focused="true"]~.error {
     visibility: unset;
   }
+
+  .bg-dark {
+    opacity: 60%;
+  }

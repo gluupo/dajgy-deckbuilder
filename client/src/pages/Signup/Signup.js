@@ -49,7 +49,7 @@ const Signup = () => {
     }
     return (
       <Container className='flex-fill align-items-center d-flex'>
-        <Row className="rounded-3 d-flex justify-content-center text-center align-items-center col-11 col-lg-6 m-auto bg-dark">
+        <Row className="rounded-3 d-flex justify-content-center text-center align-items-center col-11 col-lg-6 m-auto bg-dark" id="bg-card">
           <Form className="col-12 col-md-12 col-lg-10 bg-dark p-4 p-sm-5 rounded-3 m-2"
             onSubmit={handleFormSubmit}>
             <h1 className='text-light mb-4'>Sign Up</h1>
