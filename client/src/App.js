@@ -9,11 +9,15 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+//Pages
 import Home from './pages/Home/Home';
 import Signup from './pages/Signup/Signup';
 import Login from './pages/Login/Login';
-import Search from './pages/Search';
+import Search from './pages/Search/Search';
 import Profile from './pages/Profile/Profile';
+import Deck from './pages/Deck/Deck';
+
+// Components
 import Header from './components/Header/index';
 import Footer from './components/Footer/index';
 
@@ -55,6 +59,7 @@ function App() {
             <Route exact path="/search" component={Search} />
             <Route exact path="/me" component={Profile} />
             <Route exact path="/users/:id" component={Profile} />
+            <Route exact path="/deck/:id" component={Deck} />
           </Switch>
           <Footer />
         </div>

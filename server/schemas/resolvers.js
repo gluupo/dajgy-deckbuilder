@@ -76,7 +76,7 @@ const resolvers = {
             if (deck.cards[i].multiverseid === input.multiverseid) {
               if (deck.cards[i].supertypes && deck.cards[i].supertypes.some(str => str === 'Legendary') && deck.cards[i].cardCount < 2)
                 deck.cards[i].cardCount++
-            } else if (deck.cards[i].cardCount < 5)
+            } else if (deck.cards[i].cardCount < 4)
               deck.cards[i].cardCount++
           }
         }

@@ -75,13 +75,12 @@ export const EDIT_DECK = gql`
 export const ADD_TO_DECK = gql`
   mutation addToDeck($input: DeckInput){
     addToDeck(input: $input){
-        _id
         cards{
           name
           text
           imageUrl
           manaCost
-          superTypes
+          supertypes
           rarity
           types
           cardCount

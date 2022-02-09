@@ -90,7 +90,7 @@ const Profile = () => {
         <ListGroup defaultActiveKey="key">
           {
             user.decks.map(deck => (
-              <DeckList {...deck} />
+              <DeckList {...deck} workingDeck={user.workingDeck} />
             ))
           }
         </ListGroup>
@@ -100,36 +100,21 @@ const Profile = () => {
 
   return (
     <>
-      <div>
-        <div>
-          <h2>
-            Viewing {id ? `${user.username}'s` : 'your'} profile.
-          </h2>
-          {renderCurrentUserInfo()}
-          {renderUserList()}
-          {renderCreateButton()}
-          {renderDeckList()}
-        </div>
-      </div>
-
-      <Container>
+      <Container className='mt-5'>
         <Row>
-          <Col>
-            <Card style={{ width: '18rem', height: '100%' }}>
-              <Card.Body>
-                <Card.Title>deck1 exp..</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
-              </Card.Body>
-            </Card>
-
+          <div>
+            <div>
+              <h2>
+                Viewing {id ? `${user.username}'s` : 'your'} profile.
+              </h2>
+              {renderCurrentUserInfo()}
+              {renderCreateButton()}
+            </div>
+          </div>
+          <Col xs={12}>
+            {renderDeckList()}
           </Col>
           <Col xs lg="2">
-            <Card style={{ width: '18rem', height: '100%' }}>
-              <Card.Body>
-                <Card.Title>Current Deck</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">being built</Card.Subtitle>
-              </Card.Body>
-            </Card>
           </Col>
         </Row>
       </Container>
