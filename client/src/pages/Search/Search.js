@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLazyQuery } from '@apollo/client';
 import { Row, Form, Button, Container } from 'react-bootstrap'
-import bootstrap from 'bootstrap/dist/css/bootstrap.min.css';
+
 // Utilities
 import { SEARCH } from '../../utils/queries';
 // Components
