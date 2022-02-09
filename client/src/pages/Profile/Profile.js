@@ -1,8 +1,9 @@
 // Node Modules
-import React from 'react';
-import { Redirect, useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { ListGroup, Row, Col, Button, Container, Card } from 'react-bootstrap';
 import { useQuery, useMutation } from '@apollo/client';
+
 // Utilities
 import Auth from '../../utils/auth';
 import { QUERY_USERS, QUERY_USER, QUERY_ME } from '../../utils/queries';
@@ -15,19 +16,34 @@ const Profile = () => {
   const { id } = useParams();
 
   // Get current user
-  const { loading, data, error } = useQuery(id ? QUERY_USER : QUERY_ME, {
+  const { loading, data, error } = useQuery(QUERY_USER, {
     variables: { id },
   });
 
   // Get a list of all users
   const { usersLoading, data: usersData } = useQuery(QUERY_USERS);
-
-  // Create a new deck attached to current user
-  const [createDeck, { deckError, newDeckData }] = useMutation(CREATE_DECK);
-  //TODO: set current deck to new
-
   const user = data?.me || data?.user || {};
   const users = usersData?.users || [];
+
+  // Create a new deck attached to current user
+  const [createDeck, { deckError, newDeckData }] = useMutation(CREATE_DECK, {
+    // The update method allows us to access and update the local cache
+    update(cache, { data: { createDeck } }) {
+      try {
+        if (user) {
+          cache.writeQuery({
+            query: QUERY_USER,
+            data: { user: { ...user, decks: [createDeck, ...user.decks] } },
+          });
+        }
+      } catch (e) {
+        console.error(e);
+      }
+    }
+  })
+  //TODO: set current deck to new
+
+
 
   if (error) console.log(error);
 
@@ -70,15 +86,18 @@ const Profile = () => {
     );
   };
 
+  const createHandler = async () => {
+    const newDeck = await createDeck()
+  }
+
   const renderCreateButton = () => {
     if (Auth.loggedIn() && Auth.getProfile().data._id === id) {
       return (
-        <Button variant="outline-light" onClick={createDeck}>Create Deck</Button>
+        <Button variant="outline-light" onClick={createHandler}>Create Deck</Button>
       )
     }
   }
 
-  console.log(user.decks)
 
   const renderDeckList = () => {
     if (!user.decks.length) {
@@ -86,11 +105,12 @@ const Profile = () => {
         <h4>No Decks Created</h4>
       )
     } else {
+      console.log(user.decks.length)
       return (
         <ListGroup defaultActiveKey="key">
           {
             user.decks.map(deck => (
-              <DeckList {...deck} workingDeck={user.workingDeck} />
+              <DeckList key={deck._id} {...deck} workingDeck={user.workingDeck} />
             ))
           }
         </ListGroup>
