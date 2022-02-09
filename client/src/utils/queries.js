@@ -63,6 +63,7 @@ export const GET_DECK = gql`
   query getDeck($_id:ID!) {
     getDeck(_id:$_id){
       _id
+      createdAt
       cards{
         name
         types
