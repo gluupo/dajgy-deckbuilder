@@ -23,8 +23,10 @@ const UserList = ({ users, title }) => {
 
   return (
     <>
-      <h3>{title}</h3>
-      {renderUsers()}
+      <div className='m-5'>
+        <h3>{title}</h3>
+        {renderUsers()}
+      </div>
     </>
   );
 };
