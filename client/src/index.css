@@ -14,6 +14,10 @@ body {
   background-attachment: fixed;
 }
 
+header {
+  background-image: url(./components/Header/assets/banner.png);
+}
+
 h1, #submit {
   font-family: 'Rubik Mono One', sans-serif;
 }
