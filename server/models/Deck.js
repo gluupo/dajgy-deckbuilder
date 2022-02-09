@@ -5,6 +5,11 @@ const deckSchema = new Schema(
     name: {
       type: String,
     },
+    createdAt: {
+      type: Date,
+      required: true,
+      default: Date.now,
+    },
     lands: [
       {
         swamp: {
