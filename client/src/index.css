@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Inconsolata&family=Jura:wght@300;400;500;600;700&family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inconsolata&family=Rubik&family=Rubik+Mono+One&display=swap');
 
 html, * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inconsolata', monospace;
+  font-family: 'Chakra Petch', sans-serif;
 }
 
 body {
