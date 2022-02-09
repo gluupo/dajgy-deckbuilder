@@ -78,4 +78,12 @@ export const GET_DECK = gql`
     }
   }
 `;
+export const GET_ALL_DECKS = gql`
+  query getAllDecks {
+    getAllDecks{
+      _id
+      name      
+    }
+  }
+`;
 
