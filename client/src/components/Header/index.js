@@ -3,7 +3,7 @@ import Navigation from '../Navigation';
 
 const Header = () => {
   return (
-    <header style={{ backgroundImage: ('./assets/banner.png') }} id='header'>
+    <header id='header'>
       <Navigation />
     </header>
   );
