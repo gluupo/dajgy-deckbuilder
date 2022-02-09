@@ -7,9 +7,6 @@ import { ADD_TO_DECK } from "../../utils/mutations";
 
 
 const MTGCard = (item) => {
-  const [addtoDeck, { data, loading, error }] = useMutation(ADD_TO_DECK);
-
-
   const {
     name,
     types,
@@ -21,9 +18,19 @@ const MTGCard = (item) => {
     multiverseid
   } = item;
 
-  const clickHandler = () => {
-    console.log(item)
-    addtoDeck(item)
+  const [addToDeck, { error }] = useMutation(ADD_TO_DECK);
+
+
+
+  const clickHandler = async () => {
+    try {
+      // Execute mutation and pass in defined parameter data as variables
+      const { data } = await addToDeck({
+        variables: { input: { ...item } }
+      });
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   const divStyle = {

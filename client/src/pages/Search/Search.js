@@ -70,6 +70,7 @@ const Search = () => {
                 {results.map(e =>
                   < MTGCard
                     multiverseid={e.multiverseid}
+                    types={e.types}
                     name={e.name}
                     manaCost={e.manaCost}
                     supertypes={e.supertypes}
