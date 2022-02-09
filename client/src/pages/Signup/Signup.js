@@ -96,7 +96,7 @@ const Signup = () => {
   return (
     <>
       {renderForm()}
-      {error && <div>{error.message}</div>}
+      {error && <div className='text-center text-danger fs-3 fw-bold'>{error.message}</div>}
     </>
   );
 };
