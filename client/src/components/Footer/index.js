@@ -30,7 +30,7 @@ const Footer = () => (
               <a href="https://github.com/Johny49" target='_blank' rel="noreferrer" className="text-muted">
                 <FaIdCard size={20} />
               </a>
-              <p className="text-light">geoffrey</p>
+              <p className="text-light">jeff</p>
             </div>
           </Col>
           <Col xs={4} lg={2} className="contactInfo text-center">
