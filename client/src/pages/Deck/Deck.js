@@ -63,10 +63,6 @@ const Deck = () => {
     }
   }
 
-  const manaStyles = {
-    "width": "75px"
-  }
-
   return (
     <>
       <Container
@@ -76,25 +72,35 @@ const Deck = () => {
           <h1
             className='text-light'>DECK GOES HERE LMAO</h1>
           <Container>
-            <Col>
-              <Row className="justify-content-center">
-                {manaSymbols.map(e =>
-                  <Col>
-                    <TiArrowSortedUp
-                      className="text-light col-12"
-                      size={40}
-                      onClick="" />
-                    <img
-                      src={e.image}
-                      style={manaStyles}
-                      alt={e.image} />
-                    <TiArrowSortedDown
-                      className="text-light col-12"
-                      size={40} />
-                  </Col>
-                )}
-              </Row>
-            </Col>
+            <Row className="justify-content-center">
+              {manaSymbols.map(e =>
+                <Col className="row justify-content-center">
+                  <TiArrowSortedUp
+                    className="text-light col-12"
+                    size={40}
+                    onClick="" />
+                  <Col xs={12}
+                    className="m-0 text-white"
+                    style={{
+                      backgroundImage: `url("${e.image}")`,
+                      backgroundSize: '75px',
+                      backgroundPosition: '50% 50%',
+                      backgroundRepeat: 'no-repeat',
+                      width: '75px',
+                      height: '75px',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      fontSize: '50px',
+                      textShadow: '-2px -2px 2px #f00'
+                    }}
+                    alt={e.image}>10</Col>
+                  <TiArrowSortedDown
+                    className="text-light col-12"
+                    size={40} />
+                </Col>
+              )}
+            </Row>
           </Container>
           {renderDeck()}
         </Row>
