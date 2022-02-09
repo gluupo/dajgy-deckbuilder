@@ -95,6 +95,26 @@ const resolvers = {
           return deck;
         }
       }
+    },
+    removeCard: async (_, { card }, context) => {
+      if (context.user) {
+        const user = await User.findOne({ _id: context.user._id });
+        const deck = await Deck.findOneAndUpdate(
+          { _id: user.workingDeck }
+        );
+        const exists = deck.cards.some((obj) => obj.multiverseid === input.multiverseid)
+        console.log(exists)
+        if (!exists) {
+          return deck
+        } else {
+          for (let i = 0; i < deck.cards.length; i++) {
+            if (deck.cards[i].multiverseid === card.multiverseid && deck.cards[i].cardCount < 4) {
+              deck.cards[i].cardCount--
+            }
+          }
+          return deck
+        }
+      }
     }
   }
 }

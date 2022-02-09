@@ -57,6 +57,7 @@ const typeDefs = gql`
     createDeck: Deck,
     addToDeck(input: DeckInput): Deck
     editDeck(deckId: String): Deck
+    removeCard(multiverseid: String!): Card
   }
 
 

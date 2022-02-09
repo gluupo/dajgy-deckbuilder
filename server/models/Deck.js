@@ -61,6 +61,10 @@ const deckSchema = new Schema(
         },
         multiverseid: {
           type: String,
+        },
+        cardCount: {
+          type: Number,
+          default: 1
         }
       },
     ],
@@ -73,7 +77,7 @@ const deckSchema = new Schema(
   }
 );
 
-deckSchema.virtual('cardCount').get(function () {
+deckSchema.virtual('totalCards').get(function () {
   return this.cards.length;
 });
 
