@@ -43,9 +43,12 @@ const Deck = () => {
 
   return (
     <>
-      <Container>
-        <Row>
-          <h1>DECK GOES HERE LMAO</h1>
+      <Container
+        className='flex-fill d-flex'>
+        <Row
+          className="justify-content-center text-center align-items-center m-auto p-4 bg-dark rounded-3" id="bg-card">
+          <h1
+            className='text-light'>DECK GOES HERE LMAO</h1>
           {renderDeck()}
         </Row>
       </Container>
