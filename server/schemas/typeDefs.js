@@ -17,6 +17,7 @@ const typeDefs = gql`
 
   type Deck {
     _id:ID
+    name: String
     cards:[Card]
   }
 
@@ -38,6 +39,7 @@ const typeDefs = gql`
     search(name:String): [Card]
     getDeck(_id:ID!): Deck
     getUserDecks(userId:ID!): [Deck]
+    getAllDecks(order: Int, limit: Int): [Deck]
   }
 
   input DeckInput {

@@ -1,7 +1,8 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User, Deck } = require('../models');
 const { card } = require('mtgsdk')
-const { signToken } = require('../utils/auth')
+const { signToken } = require('../utils/auth');
+const { collection } = require('../models/User');
 
 const resolvers = {
   Query: {
@@ -25,6 +26,9 @@ const resolvers = {
     getDeck: async (_, args, context) => {
       const deck = await Deck.findOne({ _id: args._id })
       return deck;
+    },
+    getAllDecks: async (_, { order = -1, limit = 5 }, context) => {
+      return await Deck.find({}).sort({ createdAt: order }).limit(limit)
     },
   },
 

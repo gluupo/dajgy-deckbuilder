@@ -63,6 +63,7 @@ export const GET_DECK = gql`
   query getDeck($_id:ID!) {
     getDeck(_id:$_id){
       _id
+      createdAt
       cards{
         name
         types
@@ -74,6 +75,14 @@ export const GET_DECK = gql`
         multiverseid
         cardCount
       }
+    }
+  }
+`;
+export const GET_ALL_DECKS = gql`
+  query getAllDecks {
+    getAllDecks{
+      _id
+      name      
     }
   }
 `;

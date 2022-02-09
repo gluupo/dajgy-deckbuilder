@@ -1,3 +1,4 @@
+[
   {
     "name": "Fun Deck",
     "cards": [
@@ -30,4 +31,71 @@
         "cardCount": 1
       }
     ]
+  },
+  {
+    "name": "Funer Deck",
+    "cards": [
+      {
+        "name": "Kamahl, Pit Fighter",
+        "types": [
+          "Creature"
+        ],
+        "manaCost": "{4}{R}{R}",
+        "supertypes": [
+          "Legendary"
+        ],
+        "rarity": "Rare",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=29963&type=card",
+        "text": "Haste (This creature can attack and {T} as soon as it comes under your control.)\n{T}: Kamahl, Pit Fighter deals 3 damage to any target.",
+        "multiverseid": "29963",
+        "cardCount": 1
+      },
+      {
+        "name": "Kamahl's Desire",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{1}{R}",
+        "supertypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=29761&type=card",
+        "text": "Enchant creature\nEnchanted creature has first strike.\nThreshold — Enchanted creature gets +3/+0 as long as seven or more cards are in your graveyard.",
+        "multiverseid": "29761",
+        "cardCount": 1
+      }
+    ]
+  },
+  {
+    "name": "Funnest Deck",
+    "cards": [
+      {
+        "name": "Kamahl, Pit Fighter",
+        "types": [
+          "Creature"
+        ],
+        "manaCost": "{4}{R}{R}",
+        "supertypes": [
+          "Legendary"
+        ],
+        "rarity": "Rare",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=29963&type=card",
+        "text": "Haste (This creature can attack and {T} as soon as it comes under your control.)\n{T}: Kamahl, Pit Fighter deals 3 damage to any target.",
+        "multiverseid": "29963",
+        "cardCount": 1
+      },
+      {
+        "name": "Kamahl's Desire",
+        "types": [
+          "Enchantment"
+        ],
+        "manaCost": "{1}{R}",
+        "supertypes": null,
+        "rarity": "Common",
+        "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=29761&type=card",
+        "text": "Enchant creature\nEnchanted creature has first strike.\nThreshold — Enchanted creature gets +3/+0 as long as seven or more cards are in your graveyard.",
+        "multiverseid": "29761",
+        "cardCount": 1
+      }
+    ]
   }
+]
