@@ -41,7 +41,6 @@ const typeDefs = gql`
   }
 
   input DeckInput {
-    _id:ID!,
     multiverseid:String!,
     text:String,
     manaCost:String,
@@ -50,7 +49,6 @@ const typeDefs = gql`
     rarity:String,
     imageUrl:String!,
     types:[String],
-    cardCount: Int
   }
 
   type Mutation {

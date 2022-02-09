@@ -7,7 +7,6 @@ import Card from '../../components/Card/MTGCard'
 
 const DeckList = (deck) => {
     const [editDeck, { error, data }] = useMutation(EDIT_DECK);
-    console.log("DECK: ", deck)
 
     const editDeckHandler = async () => {
         const { data } = await editDeck({
@@ -17,7 +16,7 @@ const DeckList = (deck) => {
     if (deck._id === deck.workingDeck) {
         return (
             <ListGroup.Item
-                className="bg-dark">
+                className="bg-dark" key={deck._id} id={deck._id}>
                 <h1>{deck.name ? deck.name : 'New Deck'}</h1>
                 <Button
                     className="mx-2"
@@ -32,6 +31,8 @@ const DeckList = (deck) => {
     } else {
         return (
             <ListGroup.Item
+                key={deck._id}
+                id={deck._id}
                 className="bg-dark text-light p-2 m-3"
                 id="bg-card"
                 key={deck._id}>

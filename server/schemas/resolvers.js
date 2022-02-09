@@ -64,6 +64,7 @@ const resolvers = {
     addToDeck: async (_, { input }, context) => {
       if (context.user) {
         const user = await User.findOne({ _id: context.user._id });
+        console.log(input)
         Object.keys(input).map(k => input[k] = typeof input[k] == 'string' ? input[k].trim() : input[k]);
         const deck = await Deck.findOne({ _id: user.workingDeck })
         const exists = deck.cards.some((obj) => obj.multiverseid === input.multiverseid)
