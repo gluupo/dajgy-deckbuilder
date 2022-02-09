@@ -11,14 +11,6 @@ const Footer = () => (
         <Row center="xs" className="justify-content-around">
           <Col xs={4} lg={2} className="contactInfo text-center">
             <div className="contactInfo-box justify-content-between mt-3">
-              <a href="https://github.com/gluupo" target='_blank' rel="noreferrer" className="text-muted">
-                <FaIdCard size={20} />
-              </a>
-              <p className="text-light">ari</p>
-            </div>
-          </Col>
-          <Col xs={4} lg={2} className="contactInfo text-center">
-            <div className="contactInfo-box justify-content-between mt-3">
               <a href="https://github.com/dcrlsn" target='_blank' rel="noreferrer" className="text-muted">
                 <FaIdCard size={20} />
               </a>
@@ -27,10 +19,10 @@ const Footer = () => (
           </Col>
           <Col xs={4} lg={2} className="contactInfo text-center">
             <div className="contactInfo-box justify-content-between mt-3">
-              <a href="https://github.com/Johny49" target='_blank' rel="noreferrer" className="text-muted">
+              <a href="https://github.com/gluupo" target='_blank' rel="noreferrer" className="text-muted">
                 <FaIdCard size={20} />
               </a>
-              <p className="text-light">geoffrey</p>
+              <p className="text-light">ari</p>
             </div>
           </Col>
           <Col xs={4} lg={2} className="contactInfo text-center">
@@ -39,6 +31,14 @@ const Footer = () => (
                 <FaIdCard size={20} />
               </a>
               <p className="text-light">jesus</p>
+            </div>
+          </Col>
+          <Col xs={4} lg={2} className="contactInfo text-center">
+            <div className="contactInfo-box justify-content-between mt-3">
+              <a href="https://github.com/Johny49" target='_blank' rel="noreferrer" className="text-muted">
+                <FaIdCard size={20} />
+              </a>
+              <p className="text-light">geoff</p>
             </div>
           </Col>
           <Col xs={4} lg={2} className="contactInfo text-center">

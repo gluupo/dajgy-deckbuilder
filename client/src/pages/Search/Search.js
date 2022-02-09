@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLazyQuery } from '@apollo/client';
 import { Row, Form, Button, Container } from 'react-bootstrap'
-import bootstrap from 'bootstrap/dist/css/bootstrap.min.css';
+
 // Utilities
 import { SEARCH } from '../../utils/queries';
 // Components
@@ -66,7 +66,7 @@ const Search = () => {
                 </Button>
               </Form>
               <Row
-                className='d-flex justify-content-center col-sm-12'>
+                className='d-flex justify-content-center col-sm-12 mb-5'>
                 {results.map(e =>
                   < MTGCard
                     multiverseid={e.multiverseid}
@@ -90,7 +90,7 @@ const Search = () => {
         <Row
           className="justify-content-center text-center align-items-center m-auto bg-dark">
           <Form
-            className="col-12 col-lg-10 bg-dark p-4 p-sm-5 rounded-3 m-2"
+            className="col-12 col-lg-10 bg-dark p-4 p-sm-5 rounded-3"
             onSubmit={handleFormSubmit}>
             <h1
               className='text-light mb-4'>Search</h1>
