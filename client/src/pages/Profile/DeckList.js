@@ -16,18 +16,34 @@ const DeckList = (deck) => {
     }
     if (deck._id === deck.workingDeck) {
         return (
-            <ListGroup.Item>
+            <ListGroup.Item
+                className="bg-dark">
                 <h1>{deck.name ? deck.name : 'New Deck'}</h1>
-                <Button href={`/deck/${deck._id}`}>view</Button>
-                <Button onClick={editDeckHandler}>edit</Button>
+                <Button
+                    className="mx-2"
+                    variant="outline-light"
+                    href={`/deck/${deck._id}`}>view</Button>
+                <Button
+                    className="mx-2"
+                    variant="outline-light"
+                    onClick={editDeckHandler}>edit</Button>
             </ListGroup.Item>
         );
     } else {
         return (
-            <ListGroup.Item key={deck._id}>
-                <h2>{deck.name ? deck.name : 'New Deck'}</h2>
-                <Button href={`/deck/${deck._id}`}>view</Button>
-                <Button onClick={editDeckHandler}>edit</Button>
+            <ListGroup.Item
+                className="bg-dark text-light p-2 m-3"
+                id="bg-card"
+                key={deck._id}>
+                <h1>{deck.name ? deck.name : 'New Deck'}</h1>
+                <Button
+                    className="mx-2"
+                    variant="outline-light"
+                    href={`/deck/${deck._id}`}>view</Button>
+                <Button
+                    className="mx-2"
+                    variant="outline-light"
+                    onClick={editDeckHandler}>edit</Button>
             </ListGroup.Item>
         )
     }
