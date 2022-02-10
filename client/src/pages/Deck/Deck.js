@@ -122,7 +122,9 @@ const Deck = () => {
         className='flex-fill d-flex'>
         <Row
           className="justify-content-center text-center align-items-center m-auto p-4 bg-dark rounded-3" id="bg-card">
-          <InlineEditDeckName value={deck.name || "New Deck"} setValue={setValue} />
+          <InlineEditDeckName
+            className='col-6'
+            value={deck.name || "New Deck"} setValue={setValue} />
           <Container>
             <Row className="justify-content-center">
               {manaSymbols.map(e =>

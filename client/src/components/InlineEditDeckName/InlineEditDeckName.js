@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useQuery, useMutation } from "@apollo/client";
 import { UPDATE_DECK_NAME } from "../../utils/mutations";
+import './assets/styles.css';
 
 const InlineEditDeckName = ({ value, setValue }) => {
     const [updateDeckName, { error }] = useMutation(UPDATE_DECK_NAME)
@@ -27,14 +28,16 @@ const InlineEditDeckName = ({ value, setValue }) => {
     }
 
     return (
-        <input
+        <textarea
+            id='deckName'
             value={editingValue}
             aria-label="Deck name"
             onChange={onChange}
             onKeyDown={onKeyDown}
             onBlur={onBlur}
+            maxLength='32'
         />
     )
 }
 
-export default InlineEditDeckName;
+export default InlineEditDeckName; 
