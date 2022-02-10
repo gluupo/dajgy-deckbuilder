@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useQuery, useMutation } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import { UPDATE_DECK_NAME } from "../../utils/mutations";
 import './assets/styles.css';
 
@@ -9,6 +9,8 @@ const InlineEditDeckName = ({ value, setValue }) => {
     const [editingValue, setEditingValue] = useState(value);
 
     const onChange = (event) => setEditingValue(event.target.value);
+
+    console.log(error)
 
     const onKeyDown = (event) => {
         if (event.key === "Enter" || event.key === "Escape") {

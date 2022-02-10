@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { GET_DECK } from '../../utils/queries';
 import { useParams } from "react-router-dom";
 import { useQuery, useMutation } from "@apollo/client";
-import { EDIT_LAND, UPDATE_DECK_NAME } from '../../utils/mutations'
+import { EDIT_LAND } from '../../utils/mutations'
 import { Container, Row, Col, Button } from "react-bootstrap";
 import MTGCard from '../../components/Card/MTGCard';
 import { TiArrowSortedDown, TiArrowSortedUp } from 'react-icons/ti';
@@ -22,7 +22,6 @@ const Deck = () => {
   console.log(data?.getDeck)
   const deck = data?.getDeck || {};
 
-  console.log(data);
 
   const [editLand, { manaError }] = useMutation(EDIT_LAND, {
     // The update method allows us to access and update the local cache
@@ -70,6 +69,7 @@ const Deck = () => {
   ]
 
   if (error) console.log(error);
+  if (manaError) console.log(error)
   if (loading) {
     return <h4>Loading...</h4>
   }
@@ -124,7 +124,7 @@ const Deck = () => {
           className="justify-content-center text-center align-items-center m-auto p-4 bg-dark rounded-3" id="bg-card">
           <InlineEditDeckName
             className='col-6'
-            value={deck.name || "New Deck"} setValue={setValue} />
+            value={deck.name || "New Deck" || value} setValue={setValue} />
           <Container>
             <Row className="justify-content-center">
               {manaSymbols.map(e =>

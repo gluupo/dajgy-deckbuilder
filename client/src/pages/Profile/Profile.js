@@ -1,15 +1,14 @@
 // Node Modules
-import React, { useEffect, useState } from 'react';
-import { Redirect, useParams } from 'react-router-dom';
-import { ListGroup, Row, Col, Button, Container, Card } from 'react-bootstrap';
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import { ListGroup, Row, Col, Button, Container } from 'react-bootstrap';
 import { useQuery, useMutation } from '@apollo/client';
 
 // Utilities
 import Auth from '../../utils/auth';
-import { QUERY_USERS, QUERY_USER, QUERY_ME } from '../../utils/queries';
+import { QUERY_USER, QUERY_ME } from '../../utils/queries';
 import { CREATE_DECK } from '../../utils/mutations';
 // Components
-import UserList from '../../components/UserList/';
 import DeckList from './DeckList';
 
 const Profile = () => {
@@ -21,10 +20,8 @@ const Profile = () => {
   });
 
   // Get a list of all users
-  const { usersLoading, data: usersData } = useQuery(QUERY_USERS);
   const user = data?.me || data?.user || {};
-  const users = usersData?.users || [];
-
+  let editable;
 
 
   // Create a new deck attached to current user
@@ -46,10 +43,11 @@ const Profile = () => {
   //TODO: set current deck to new
 
   if (Auth.loggedIn() && Auth.getProfile().data._id === id) {
-    return <Redirect to="/me" />;
+    editable = true;
   }
 
   if (error) console.log(error);
+  if (deckError) console.log(deckError)
 
   if (loading) {
     return <h4>Loading...</h4>;
@@ -68,13 +66,6 @@ const Profile = () => {
     );
   }
 
-  const renderUserList = () => {
-    if (usersLoading) return null;
-    // Only renders users who's profile we're not currently viewing
-    const notMeUsers = users.filter(o => o._id !== user._id);
-    return <UserList users={notMeUsers} title="User List" />;
-  };
-
   const renderCurrentUserInfo = () => {
     if (id) return null;
     return (
@@ -90,15 +81,15 @@ const Profile = () => {
   };
 
   const createHandler = async () => {
-    const newDeck = await createDeck()
+    await createDeck()
   }
 
   const renderCreateButton = () => {
-    if (id) return null
-    return (
-      <Button variant="outline-light" onClick={createHandler}>Create Deck</Button>
-    )
-
+    if (editable) {
+      return (
+        <Button variant="outline-light" onClick={createHandler}>Create Deck</Button>
+      )
+    }
   }
 
 
@@ -113,7 +104,7 @@ const Profile = () => {
         <ListGroup defaultActiveKey="key">
           {
             user.decks.map(deck => (
-              <DeckList key={deck._id} {...deck} workingDeck={user.workingDeck} />
+              <DeckList key={deck._id} {...deck} editable={editable} />
             ))
           }
         </ListGroup>
@@ -128,7 +119,7 @@ const Profile = () => {
           <div>
             <div>
               <h1 className='text-light'>
-                Viewing {id ? `${user.username}'s` : 'your'} profile
+                Viewing {editable ? 'your' : `${user.username}'s`} profile
               </h1>
               {renderCurrentUserInfo()}
               {renderCreateButton()}
