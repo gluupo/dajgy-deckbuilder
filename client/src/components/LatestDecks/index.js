@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { GET_ALL_DECKS } from '../../utils/queries';
 import { Row, Container, Button } from 'react-bootstrap'
@@ -13,7 +12,7 @@ const LatestDeck = () => {
       <div>
         <Button
           variant="outline-light"
-          href={`/users/${_id}`}
+          href={`/deck/${_id}`}
           size="lg"
           className="my-2"
           style={{
