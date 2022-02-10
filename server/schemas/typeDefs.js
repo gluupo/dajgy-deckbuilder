@@ -19,6 +19,7 @@ const typeDefs = gql`
     _id:ID
     name: String
     cards:[Card]
+    createdAt: String
   }
 
   type Card @cacheControl(maxAge:86400, scope: PUBLIC) {
