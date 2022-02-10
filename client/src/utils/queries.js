@@ -40,6 +40,20 @@ export const QUERY_ME = gql`
       _id
       username
       email
+      decks {
+        _id
+  	    cards{
+        	name
+        	types
+        	manaCost
+        	supertypes
+        	rarity
+        	imageUrl
+        	text
+        	multiverseid
+        	cardCount	
+        }
+      }
     }
   }
 `;
