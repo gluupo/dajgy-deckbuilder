@@ -22,18 +22,23 @@ const Deck = () => {
 
   const manaSymbols = [
     {
+      id: 0,
       image: whitemana
     },
     {
+      id: 1,
       image: bluemana
     },
     {
+      id: 2,
       image: blackmana
     },
     {
+      id: 3,
       image: redmana
     },
     {
+      id: 4,
       image: greenmana
     },
   ]
@@ -50,13 +55,15 @@ const Deck = () => {
         <Col>
           {deck.cards.map(e =>
             < MTGCard
-              multiverseid={e.multiverseid}
-              name={e.name}
-              manaCost={e.manaCost}
-              superTypes={e.superTypes}
-              rarity={e.rarity}
-              imageUrl={e.imageUrl}
-              text={e.text}
+              key={e.multiverseid}
+              {...e}
+            // multiverseid={e.multiverseid}
+            // name={e.name}
+            // manaCost={e.manaCost}
+            // superTypes={e.superTypes}
+            // rarity={e.rarity}
+            // imageUrl={e.imageUrl}
+            // text={e.text}
             />)}
         </Col>
       )
@@ -74,7 +81,7 @@ const Deck = () => {
           <Container>
             <Row className="justify-content-center">
               {manaSymbols.map(e =>
-                <Col className="row justify-content-center">
+                <Col className="row justify-content-center" key={e.id}>
                   <TiArrowSortedUp
                     className="text-light col-12"
                     size={40}

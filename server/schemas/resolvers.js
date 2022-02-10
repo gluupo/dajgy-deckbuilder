@@ -105,6 +105,7 @@ const resolvers = {
         const user = await User.findOne({ _id: context.user._id });
         const deck = await Deck.findOneAndUpdate(
           { _id: user.workingDeck }
+          // This is will get me to the right deck
         );
         const exists = deck.cards.some((obj) => obj.multiverseid === input.multiverseid)
         console.log(exists)
@@ -119,8 +120,17 @@ const resolvers = {
           return deck
         }
       }
-    }
+    },
+    // editLand: async (_, args, context) => {
+    //   if (context.user) {
+    //     const user = await User.findOne({ _id: context.user._id });
+    //     const deck = await Deck.findOneAndUpdate(
+    //       { _id: user.workingDeck }
+    //     )
+    //   }
+    // }
   }
 }
+
 
 module.exports = resolvers;
