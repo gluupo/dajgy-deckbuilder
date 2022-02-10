@@ -90,11 +90,11 @@ const Profile = () => {
   }
 
   const renderCreateButton = () => {
-    if (Auth.loggedIn() && Auth.getProfile().data._id === id) {
-      return (
-        <Button variant="outline-light" onClick={createHandler}>Create Deck</Button>
-      )
-    }
+    if (id) return null
+    return (
+      <Button variant="outline-light" onClick={createHandler}>Create Deck</Button>
+    )
+
   }
 
 
