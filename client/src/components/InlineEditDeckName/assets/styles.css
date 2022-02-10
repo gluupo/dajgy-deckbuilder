@@ -1,0 +1,27 @@
+textarea {
+    resize: none;
+    overflow: hidden;
+  }
+
+  textarea:focus {
+    outline: 5px auto Highlight; /* Firefox */
+    outline: 5px auto -webkit-focus-ring-color; /* Chrome, Safari */
+  }
+
+  #deckName {
+    width: 30rem !important;
+    font-size: 30px !important;
+    text-align: center !important;
+    justify-content: center !important;
+    background-color: transparent;
+    border: 0;
+    border-radius: 10px;
+    font-family: 'Rubik Mono One', sans-serif;
+    color: #fff;
+  }
+
+  #deckName:hover {
+    background-color: #d3d3d3;
+    cursor: pointer;
+    color: #333;
+  }
