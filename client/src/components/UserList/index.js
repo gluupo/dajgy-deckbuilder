@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Row, Form, Button, Container } from 'react-bootstrap'
 
 const User = ({ _id, username }) => {
   return (
@@ -23,10 +24,16 @@ const UserList = ({ users, title }) => {
 
   return (
     <>
-      <div className='m-5'>
-        <h3>{title}</h3>
-        {renderUsers()}
-      </div>
+      <Container className='flex-fill align-items-center d-flex'>
+        <Row className="rounded-3 d-flex justify-content-center text-center align-items-center col-11 col-lg-6 m-auto bg-dark text-light" id="bg-card">
+          <div>
+            <h3>
+              {title}
+            </h3>
+            {renderUsers()}
+          </div>
+        </Row>
+      </Container>
     </>
   );
 };
