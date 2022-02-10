@@ -82,7 +82,8 @@ export const GET_ALL_DECKS = gql`
   query getAllDecks {
     getAllDecks{
       _id
-      name      
+      name
+      createdAt
     }
   }
 `;

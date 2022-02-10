@@ -17,7 +17,7 @@ const Deck = () => {
 
   //Get Deck
   const { loading, data, error } = useQuery(GET_DECK, { variables: { _id: id } });
-  console.log(data)
+  console.log(data?.getDeck)
   const deck = data?.getDeck || {};
 
   const manaSymbols = [
@@ -85,7 +85,7 @@ const Deck = () => {
                   <TiArrowSortedUp
                     className="text-light col-12"
                     size={40}
-                    onClick={() => console.log("click")} />
+                  />
                   <Col xs={12}
                     className="m-0 text-white"
                     style={{
