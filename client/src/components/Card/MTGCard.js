@@ -11,10 +11,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 const MTGCard = (item) => {
   const {
     name,
-    types,
     manaCost,
-    supertypes,
-    rarity,
     imageUrl,
     text,
     multiverseid
@@ -23,8 +20,6 @@ const MTGCard = (item) => {
   const [addToDeck, { error }] = useMutation(ADD_TO_DECK);
   const [removeCard, { removeError }] = useMutation(REMOVE_FROM_DECK);
 
-
-
   const clickHandler = async (e) => {
     try {
       console.log(e.target.dataset.type)
@@ -32,7 +27,6 @@ const MTGCard = (item) => {
       const copy = { ...item }
       // deletes key from object
       delete copy.__typename
-      console.log(copy)
       if (e.target.dataset.type === '+') {
         const { data } = await addToDeck({
           variables: { input: copy }
@@ -55,11 +49,12 @@ const MTGCard = (item) => {
     minHeight: '360px'
   }
 
-
+  if (error) console.log(error)
+  if (removeError) console.log(removeError)
 
   return (
-    <Col xs={12} sm={6} md={3} key={name} style={divStyle} alt={`${name} ${manaCost} \n${text}`} title={`${name} ${manaCost} \n${text}`} className='mb-3 m-1'>
-      <img src={imageUrl} className="img-fluid mtg-card" />
+    <Col xs={12} sm={6} md={3} key={name} style={divStyle} className='mb-3 m-1'>
+      <img src={imageUrl} className="img-fluid mtg-card" alt={`${name} ${manaCost} \n${text}`} title={`${name} ${manaCost} \n${text}`} />
       <ButtonGroup><Button variant="outline-light" className="m-1" data-type="+" onClick={Auth.loggedIn() ? clickHandler : null}>+</Button>
         <Button variant="outline-light" className="m-1" data-type="-" onClick={Auth.loggedIn() ? clickHandler : null}>-</Button></ButtonGroup>
     </Col >

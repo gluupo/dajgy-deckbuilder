@@ -11,6 +11,7 @@ function Navigation() {
   };
 
   if (Auth.loggedIn()) {
+    const id = Auth.getProfile().data._id;
     return (
       <>
         <Navbar bg="dark" variant="dark" id="nav">
@@ -22,7 +23,7 @@ function Navigation() {
               <Nav.Link onClick={logout}>
                 logout
               </Nav.Link>
-              <Nav.Link href="/me">
+              <Nav.Link href={`/users/${id}`}>
                 profile
               </Nav.Link>
               <Nav.Link href="/search">
