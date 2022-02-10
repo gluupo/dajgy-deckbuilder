@@ -91,55 +91,54 @@ const Profile = () => {
 
   const renderCreateButton = () => {
     if (id) return null
-
     return (
       <Button variant="outline-light" onClick={createHandler}>Create Deck</Button>
     )
+
   }
-}
 
 
-const renderDeckList = () => {
-  if (!user.decks.length) {
-    return (
-      <h4>No Decks Created</h4>
-    )
-  } else {
-    console.log(user.decks.length)
-    return (
-      <ListGroup defaultActiveKey="key">
-        {
-          user.decks.map(deck => (
-            <DeckList key={deck._id} {...deck} workingDeck={user.workingDeck} />
-          ))
-        }
-      </ListGroup>
-    )
-  }
-};
+  const renderDeckList = () => {
+    if (!user.decks.length) {
+      return (
+        <h4>No Decks Created</h4>
+      )
+    } else {
+      console.log(user.decks.length)
+      return (
+        <ListGroup defaultActiveKey="key">
+          {
+            user.decks.map(deck => (
+              <DeckList key={deck._id} {...deck} workingDeck={user.workingDeck} />
+            ))
+          }
+        </ListGroup>
+      )
+    }
+  };
 
-return (
-  <>
-    <Container className='mt-5'>
-      <Row>
-        <div>
+  return (
+    <>
+      <Container className='mt-5'>
+        <Row>
           <div>
-            <h2>
-              Viewing {id ? `${user.username}'s` : 'your'} profile.
-            </h2>
-            {renderCurrentUserInfo()}
-            {renderCreateButton()}
+            <div>
+              <h2>
+                Viewing {id ? `${user.username}'s` : 'your'} profile.
+              </h2>
+              {renderCurrentUserInfo()}
+              {renderCreateButton()}
+            </div>
           </div>
-        </div>
-        <Col xs={12}>
-          {renderDeckList()}
-        </Col>
-        <Col xs lg="2">
-        </Col>
-      </Row>
-    </Container>
-  </>
-);
+          <Col xs={12}>
+            {renderDeckList()}
+          </Col>
+          <Col xs lg="2">
+          </Col>
+        </Row>
+      </Container>
+    </>
+  );
 };
 
 export default Profile;
