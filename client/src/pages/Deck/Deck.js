@@ -92,13 +92,6 @@ const Deck = () => {
             < MTGCard
               key={e.multiverseid}
               {...e}
-            // multiverseid={e.multiverseid}
-            // name={e.name}
-            // manaCost={e.manaCost}
-            // superTypes={e.superTypes}
-            // rarity={e.rarity}
-            // imageUrl={e.imageUrl}
-            // text={e.text}
             />)}
         </Col>
       )
