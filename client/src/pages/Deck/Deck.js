@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { GET_DECK } from '../../utils/queries';
 import { useParams } from "react-router-dom";
 import { useQuery, useMutation } from "@apollo/client";
-import { EDIT_LAND } from '../../utils/mutations'
+import { EDIT_LAND, UPDATE_DECK_NAME } from '../../utils/mutations'
 import { Container, Row, Col } from "react-bootstrap";
 import MTGCard from '../../components/Card/MTGCard';
 import { TiArrowSortedDown, TiArrowSortedUp } from 'react-icons/ti';
@@ -11,10 +11,11 @@ import whitemana from './assets/white mana.png';
 import bluemana from './assets/blue mana.png';
 import greenmana from './assets/green mana.png';
 import redmana from './assets/red mana.png';
-
+import InlineEditDeckName from "../../components/InlineEditDeckName/InlineEditDeckName";
 
 const Deck = () => {
   const { id } = useParams();
+  const [value, setValue] = useState();
 
   //Get Deck
   const { loading, data, error } = useQuery(GET_DECK, { variables: { _id: id } });
@@ -121,8 +122,7 @@ const Deck = () => {
         className='flex-fill d-flex'>
         <Row
           className="justify-content-center text-center align-items-center m-auto p-4 bg-dark rounded-3" id="bg-card">
-          <h1
-            className='text-light'>DECK GOES HERE LMAO</h1>
+          <InlineEditDeckName value={deck.name || "New Deck"} setValue={setValue} />
           <Container>
             <Row className="justify-content-center">
               {manaSymbols.map(e =>

@@ -120,4 +120,12 @@ export const EDIT_LAND = gql`
   }
   }
 }
-`
+`;
+
+export const UPDATE_DECK_NAME = gql`
+    mutation updateDeckName($deckName: String!){
+        updateDeckName(deckName: $deckName){
+            name
+        }
+    }
+`;

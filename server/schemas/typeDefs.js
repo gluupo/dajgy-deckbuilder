@@ -68,6 +68,7 @@ const typeDefs = gql`
     editDeck(deckId: ID): Deck
     removeCard(multiverseid: String!): Card
     editLand(landtype: String!, operation: String!):Deck
+    updateDeckName(deckName: String!):Deck
   }
 
 
