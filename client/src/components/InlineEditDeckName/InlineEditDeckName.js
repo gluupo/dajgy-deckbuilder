@@ -3,7 +3,7 @@ import { useMutation } from "@apollo/client";
 import { UPDATE_DECK_NAME } from "../../utils/mutations";
 import './assets/styles.css';
 
-const InlineEditDeckName = ({ value, setValue }) => {
+const InlineEditDeckName = ({ value, setValue, editable }) => {
     const [updateDeckName, { error }] = useMutation(UPDATE_DECK_NAME)
 
     const [editingValue, setEditingValue] = useState(value);
@@ -27,7 +27,9 @@ const InlineEditDeckName = ({ value, setValue }) => {
             updateDeckName({ variables: { deckName: event.target.value } })
         }
     }
-
+    if (!editable) {
+        return <h2 id='deckName'>{value}</h2>
+    }
     return (
         <textarea
             id='deckName'
