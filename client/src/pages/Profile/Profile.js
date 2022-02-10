@@ -57,10 +57,14 @@ const Profile = () => {
 
   if (!user?.username) {
     return (
-      <h4>
-        You need to be logged in to see this. Use the navigation links above to
-        sign up or log in!
-      </h4>
+      <Container className='flex-fill align-items-center d-flex'>
+        <Row className="rounded-3 d-flex justify-content-center text-center align-items-center col-11 col-lg-6 m-auto bg-dark text-light p-4" id="bg-card">
+          <h3>
+            You need to be logged in to see this. Use the navigation links above to
+            sign up or log in!
+          </h3>
+        </Row>
+      </Container>
     );
   }
 
@@ -123,9 +127,9 @@ const Profile = () => {
         <Row>
           <div>
             <div>
-              <h2>
-                Viewing {id ? `${user.username}'s` : 'your'} profile.
-              </h2>
+              <h1 className='text-light'>
+                Viewing {id ? `${user.username}'s` : 'your'} profile
+              </h1>
               {renderCurrentUserInfo()}
               {renderCreateButton()}
             </div>
