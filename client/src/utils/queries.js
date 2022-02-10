@@ -78,6 +78,13 @@ export const GET_DECK = gql`
     getDeck(_id:$_id){
       _id
       createdAt
+      lands{
+      swamp
+      plain
+      mountain
+      forest
+      island
+      }
       cards{
         name
         types
