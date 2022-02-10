@@ -96,25 +96,26 @@ const resolvers = {
         }
       }
     },
-    removeCard: async (_, { card }, context) => {
+    removeCard: async (_, { multiverseid }, context) => {
       if (context.user) {
         const user = await User.findOne({ _id: context.user._id });
-        const deck = await Deck.findOneAndUpdate(
+        const deck = await Deck.findOne(
           { _id: user.workingDeck }
           // This is will get me to the right deck
         );
-        const exists = deck.cards.some((obj) => obj.multiverseid === input.multiverseid)
+        const exists = deck.cards.some((obj) => obj.multiverseid === multiverseid);
         if (!exists) {
-          return deck
+          return deck;
         } else {
           for (let i = 0; i < deck.cards.length; i++) {
-            if (deck.cards[i].multiverseid === card.multiverseid && deck.cards[i].cardCount > 1) {
-              deck.cards[i].cardCount--
-              deck.save()
-            } else if (deck.cards[i].multiverseid === card.multiverseid && deck.cards[i].cardCount <= 1) {
-              deck.cards.splice(i, 1)
-              deck.save()
-
+            if (deck.cards[i].multiverseid === multiverseid && deck.cards[i].cardCount > 1) {
+              deck.cards[i].cardCount--;
+              deck.save();
+              return deck.cards[i].name;
+            } else if (deck.cards[i].multiverseid === multiverseid && deck.cards[i].cardCount <= 1) {
+              const removedCard = deck.cards.splice(i, 1);
+              deck.save();
+              return removedCard;
             }
           }
           return deck
