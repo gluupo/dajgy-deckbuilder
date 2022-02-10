@@ -88,3 +88,11 @@ export const ADD_TO_DECK = gql`
     }
   }
 `;
+
+export const REMOVE_FROM_DECK = gql`
+  mutation removeCard($multiverseid: String!){
+    removeCard(multiverseid: $multiverseid){
+    multiverseid
+    }
+  }
+`;
