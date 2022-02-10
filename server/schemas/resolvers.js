@@ -2,7 +2,6 @@ const { AuthenticationError } = require('apollo-server-express');
 const { User, Deck } = require('../models');
 const { card } = require('mtgsdk')
 const { signToken } = require('../utils/auth');
-const { collection } = require('../models/User');
 
 const resolvers = {
   Query: {
@@ -20,7 +19,6 @@ const resolvers = {
     },
     search: async (_, args, context) => {
       const response = await card.where({ name: args.name });
-      console.log(response)
       return response.filter(e => e.imageUrl)
     },
     getDeck: async (_, args, context) => {
@@ -113,8 +111,10 @@ const resolvers = {
           return deck
         } else {
           for (let i = 0; i < deck.cards.length; i++) {
-            if (deck.cards[i].multiverseid === card.multiverseid && deck.cards[i].cardCount < 4) {
+            if (deck.cards[i].multiverseid === card.multiverseid && deck.cards[i].cardCount > 1) {
               deck.cards[i].cardCount--
+            } else if (deck.cards[i].multiverseid === card.multiverseid && deck.cards[i].cardCount <= 1) {
+              deck.cards.splice(i, 1)
             }
           }
           return deck
