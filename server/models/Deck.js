@@ -10,30 +10,34 @@ const deckSchema = new Schema(
       required: true,
       default: Date.now(),
     },
-    lands: [
-      {
-        swamp: {
-          type: Number,
-          default: 0
-        },
-        mountain: {
-          type: Number,
-          default: 0
-        },
-        plain: {
-          type: Number,
-          default: 0
-        },
-        forest: {
-          type: Number,
-          default: 0
-        },
-        island: {
-          type: Number,
-          default: 0
-        },
-      }
-    ],
+
+    swamp: {
+      type: Number,
+      default: 0,
+      required: true
+    },
+    mountain: {
+      type: Number,
+      default: 0,
+      required: true
+    },
+    plain: {
+      type: Number,
+      default: 0,
+      required: true
+    },
+    forest: {
+      type: Number,
+      default: 0,
+      required: true
+    },
+    island: {
+      type: Number,
+      default: 0,
+      required: true
+    },
+
+
     cards: [
       {
         name: {
@@ -81,6 +85,7 @@ const deckSchema = new Schema(
     id: false
   }
 );
+
 
 deckSchema.virtual('totalCards').get(function () {
   return this.cards.length;

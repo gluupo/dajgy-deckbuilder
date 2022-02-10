@@ -57,18 +57,27 @@ const Deck = () => {
   }
 
   const renderMana = (type) => {
-    if (deck.lands.length) {
-      for (let i = 0; i < deck.lands.length; i++) {
-        if (deck.lands[i] === type) {
-          return deck.lands[i]
-        }
+    for (const land in deck) {
+      if (land === type) {
+        console.log(deck[land])
+        return deck[land]
       }
     }
   }
 
-  const manaClickHandler = async (e) => {
+
+  const manaDecrementHandler = async (type) => {
     try {
-      const { manaData } = await editLand({ variables: { type: e.target.dataset.type, operation: e.target.dataset.operation } })
+      const { manaData } = await editLand({ variables: { landtype: type, operation: "minus" } })
+      return manaData
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  const manaIncrementHandler = async (type) => {
+    try {
+      const { manaData } = await editLand({ variables: { landtype: type, operation: "plus" } })
       return manaData
     } catch (err) {
       console.log(err)
@@ -76,7 +85,6 @@ const Deck = () => {
   }
 
   const renderDeck = () => {
-    console.log(deck.cards)
     if (deck.cards && deck.cards.length > 0) {
       return (
         <Col>
@@ -109,13 +117,14 @@ const Deck = () => {
             <Row className="justify-content-center">
               {manaSymbols.map(e =>
                 <Col className="row justify-content-center" key={e.id}>
-                  <TiArrowSortedUp
-                    onClick={manaClickHandler}
-                    data-type={e.name}
-                    data-operation="plus"
-                    className="text-light col-12"
-                    size={40}
-                  />
+                  <div
+                    onClick={() => manaIncrementHandler(e.name)}
+                  >
+                    <TiArrowSortedUp
+                      className="text-light col-12"
+                      size={40}
+                    />
+                  </div>
                   <Col xs={12}
                     className="m-0 text-white"
                     style={{
@@ -133,9 +142,7 @@ const Deck = () => {
                     }}
                     alt={e.image}>{renderMana(e.name)}</Col>
                   <TiArrowSortedDown
-                    onClick={manaClickHandler}
-                    data-opertaion="minus"
-                    data-type={e.name}
+                    onClick={() => manaDecrementHandler(e.name)}
                     className="text-light col-12"
                     size={40} />
                 </Col>

@@ -19,18 +19,14 @@ const typeDefs = gql`
     _id:ID
     name: String
     cards:[Card]
-    lands:[Land]
-    createdAt: String
-  }
-
-  type Land {
-    _id: ID
     swamp: Int
     mountain: Int
     plain: Int
     forest: Int
     island: Int
+    createdAt: String
   }
+
 
   type Card @cacheControl(maxAge:86400, scope: PUBLIC) {
     name: String!
@@ -71,7 +67,7 @@ const typeDefs = gql`
     addToDeck(input: DeckInput): Deck
     editDeck(deckId: ID): Deck
     removeCard(multiverseid: String!): Card
-    editLand(type: String!, operation: String!):Deck
+    editLand(landtype: String!, operation: String!):Deck
   }
 
 
