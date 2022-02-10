@@ -1,6 +1,6 @@
 // Node Modules
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Redirect, useParams } from 'react-router-dom';
 import { ListGroup, Row, Col, Button, Container, Card } from 'react-bootstrap';
 import { useQuery, useMutation } from '@apollo/client';
 
@@ -16,7 +16,7 @@ const Profile = () => {
   const { id } = useParams();
 
   // Get current user
-  const { loading, data, error } = useQuery(QUERY_USER, {
+  const { loading, data, error } = useQuery(id ? QUERY_USER : QUERY_ME, {
     variables: { id },
   });
 
@@ -24,6 +24,8 @@ const Profile = () => {
   const { usersLoading, data: usersData } = useQuery(QUERY_USERS);
   const user = data?.me || data?.user || {};
   const users = usersData?.users || [];
+
+
 
   // Create a new deck attached to current user
   const [createDeck, { deckError, newDeckData }] = useMutation(CREATE_DECK, {
@@ -43,14 +45,11 @@ const Profile = () => {
   })
   //TODO: set current deck to new
 
-
+  if (Auth.loggedIn() && Auth.getProfile().data._id === id) {
+    return <Redirect to="/me" />;
+  }
 
   if (error) console.log(error);
-
-  // redirect to personal profile page if username is yours
-  // if (Auth.loggedIn() && Auth.getProfile().data._id === id) {
-  //   return <Redirect to="/me" />;
-  // }
 
   if (loading) {
     return <h4>Loading...</h4>;
