@@ -6,6 +6,7 @@ import Auth from '../../utils/auth';
 import { QUERY_USERS } from '../../utils/queries';
 // Components
 import UserList from '../../components/UserList';
+import LatestDeck from '../../components/LatestDecks';
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_USERS);
@@ -27,6 +28,9 @@ const Home = () => {
   return (
     <>
       <div className="" id="bg"></div>
+      <div>
+        <LatestDeck />
+      </div>
       <div>
         {renderUsername()}
       </div>
