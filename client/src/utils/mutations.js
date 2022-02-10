@@ -98,13 +98,13 @@ export const REMOVE_FROM_DECK = gql`
 `;
 
 export const EDIT_LAND = gql`
-  mutation editLand($type: String!, $operation: String!) {
-  lands {
-    swamp 
-    mountain
+  mutation editLand($landtype: String!, $operation: String!) {
+    editLand(landtype:$landtype,operation:$operation){
+    swamp
     plain
+    mountain
     forest
     island
-    }
   }
+}
 `
