@@ -227,7 +227,7 @@ const Deck = () => {
           className="justify-content-center text-center align-items-center m-auto p-4 bg-dark rounded-3" id="bg-card">
           <InlineEditDeckName
             className='col-6'
-            value={deck.name || "New Deck" || value} setValue={setValue} />
+            value={deck.name || "New Deck" || value} setValue={setValue} editable={editable} />
           <Container>
             <Row className="justify-content-center">
               {renderMana()}
