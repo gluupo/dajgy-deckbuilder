@@ -1,5 +1,6 @@
 // Node Modules
 import React from 'react';
+import { useHistory } from "react-router-dom";
 import { ListGroup, Button } from 'react-bootstrap'
 import { EDIT_DECK } from '../../utils/mutations';
 import { useMutation } from '@apollo/client';
@@ -7,11 +8,14 @@ import Card from '../../components/Card/MTGCard'
 
 const DeckList = (deck) => {
     const [editDeck, { error, data }] = useMutation(EDIT_DECK);
+    let history = useHistory();
 
     const editDeckHandler = async () => {
         const { data } = await editDeck({
             variables: { deckId: deck._id }
         })
+        let path = `/deck/${deck._id}`;
+        history.push(path);
     }
     if (deck._id === deck.workingDeck) {
         return (

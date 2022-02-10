@@ -69,7 +69,7 @@ const typeDefs = gql`
     login(email:String!, password:String!): Auth
     createDeck: Deck,
     addToDeck(input: DeckInput): Deck
-    editDeck(deckId: String): Deck
+    editDeck(deckId: ID): Deck
     removeCard(multiverseid: String!): Card
   }
 
