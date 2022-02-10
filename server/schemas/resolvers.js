@@ -13,7 +13,9 @@ const resolvers = {
     },
     me: async (_, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate('decks');
+        const me = await User.findOne({ _id: context.user._id }).populate('decks');
+        console.log(me)
+        return me;
       }
       throw new AuthenticationError('You need to be logged in!');
     },
