@@ -143,7 +143,18 @@ const resolvers = {
         }
         return deck;
       }
-    }
+    },
+    updateDeckName: async (_, { deckName }, context) => {
+      if (context.user) {
+        const user = await User.findOne({ _id: context.user._id });
+        const deck = await Deck.findOne(
+          { _id: user.workingDeck }
+        );
+        deck.name = deckName
+        deck.save()
+        return deck;
+      }
+    },
   }
 }
 
