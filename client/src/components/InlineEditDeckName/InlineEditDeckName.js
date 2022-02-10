@@ -10,7 +10,7 @@ const InlineEditDeckName = ({ value, setValue }) => {
 
     const onChange = (event) => setEditingValue(event.target.value);
 
-    console.log(error)
+    if (error) console.log(error);
 
     const onKeyDown = (event) => {
         if (event.key === "Enter" || event.key === "Escape") {
@@ -24,7 +24,6 @@ const InlineEditDeckName = ({ value, setValue }) => {
             setValue(value);
         } else {
             setValue(event.target.value)
-            console.log("Value: ", value)
             updateDeckName({ variables: { deckName: event.target.value } })
         }
     }

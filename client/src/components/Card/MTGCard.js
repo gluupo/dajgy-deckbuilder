@@ -10,11 +10,15 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 const MTGCard = (item) => {
   const {
-    name,
-    manaCost,
-    imageUrl,
+    multiverseid,
     text,
-    multiverseid
+    manaCost,
+    name,
+    supertypes,
+    rarity,
+    imageUrl,
+    types,
+    editable
   } = item;
 
   const [addToDeck, { error }] = useMutation(ADD_TO_DECK);
@@ -24,9 +28,17 @@ const MTGCard = (item) => {
     try {
       console.log(e.target.dataset.type)
       // Execute mutation and pass in defined parameter data as variables
-      const copy = { ...item }
+      const copy = {
+        multiverseid,
+        text,
+        manaCost,
+        name,
+        supertypes,
+        rarity,
+        imageUrl,
+        types,
+      }
       // deletes key from object
-      delete copy.__typename
       if (e.target.dataset.type === '+') {
         const { data } = await addToDeck({
           variables: { input: copy }
@@ -52,11 +64,40 @@ const MTGCard = (item) => {
   if (error) console.log(error)
   if (removeError) console.log(removeError)
 
+  const renderButtons = () => {
+    if (editable) {
+      return (
+        <ButtonGroup>
+          <Button
+            variant="outline-light"
+            className="m-1"
+            data-type="+"
+            onClick={Auth.loggedIn()
+              ? clickHandler
+              : null}
+          >
+            +
+          </Button>
+          <Button
+            variant="outline-light"
+            className="m-1"
+            data-type="-"
+            onClick={Auth.loggedIn()
+              ? clickHandler
+              : null}
+          >
+            -
+          </Button>
+        </ButtonGroup>
+      )
+    }
+  }
+
+
   return (
     <Col xs={12} sm={6} md={3} key={name} style={divStyle} className='mb-3 m-1'>
       <img src={imageUrl} className="img-fluid mtg-card" alt={`${name} ${manaCost} \n${text}`} title={`${name} ${manaCost} \n${text}`} />
-      <ButtonGroup><Button variant="outline-light" className="m-1" data-type="+" onClick={Auth.loggedIn() ? clickHandler : null}>+</Button>
-        <Button variant="outline-light" className="m-1" data-type="-" onClick={Auth.loggedIn() ? clickHandler : null}>-</Button></ButtonGroup>
+      {renderButtons()}
     </Col >
   )
 }

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useLazyQuery } from '@apollo/client';
 import { Row, Form, Button, Container } from 'react-bootstrap'
+import Auth from '../../utils/auth';
+
 
 // Utilities
 import { SEARCH } from '../../utils/queries';
@@ -11,6 +13,11 @@ const Search = () => {
   const [formState, setFormState] = useState({ name: '' });
   const [searchResults, { called, loading, data }] = useLazyQuery(SEARCH, { variables: { ...formState } });
   const results = data?.search || [];
+
+  let editable;
+  if (Auth.loggedIn()) {
+    editable = true;
+  }
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -71,14 +78,7 @@ const Search = () => {
                   < MTGCard
                     key={e.multiverseid}
                     {...e}
-                  // multiverseid={e.multiverseid}
-                  // types={e.types}
-                  // name={e.name}
-                  // manaCost={e.manaCost}
-                  // supertypes={e.supertypes}
-                  // rarity={e.rarity}
-                  // imageUrl={e.imageUrl}
-                  // text={e.text}
+                    editable={editable}
                   />)}
               </Row>
             </Row>

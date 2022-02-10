@@ -40,6 +40,7 @@ export const QUERY_ME = gql`
       _id
       username
       email
+      workingDeck
       decks {
         _id
   	    cards{
