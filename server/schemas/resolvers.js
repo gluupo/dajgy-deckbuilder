@@ -110,10 +110,12 @@ const resolvers = {
           for (let i = 0; i < deck.cards.length; i++) {
             if (deck.cards[i].multiverseid === card.multiverseid && deck.cards[i].cardCount > 1) {
               deck.cards[i].cardCount--
+              deck.save()
             } else if (deck.cards[i].multiverseid === card.multiverseid && deck.cards[i].cardCount <= 1) {
               deck.cards.splice(i, 1)
+              deck.save()
+
             }
-            deck.save()
           }
           return deck
         }
