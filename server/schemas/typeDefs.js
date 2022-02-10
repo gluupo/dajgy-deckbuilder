@@ -19,6 +19,17 @@ const typeDefs = gql`
     _id:ID
     name: String
     cards:[Card]
+    lands:[Land]
+    createdAt: String
+  }
+
+  type Land {
+    _id: ID
+    swamp: Int
+    mountain: Int
+    plain: Int
+    forest: Int
+    island: Int
   }
 
   type Card @cacheControl(maxAge:86400, scope: PUBLIC) {

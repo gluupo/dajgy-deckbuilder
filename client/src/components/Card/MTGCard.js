@@ -26,9 +26,14 @@ const MTGCard = (item) => {
   const clickHandler = async () => {
     try {
       // Execute mutation and pass in defined parameter data as variables
+      const copy = { ...item }
+      // deletes key from object
+      delete copy.__typename
+      console.log(copy)
       const { data } = await addToDeck({
-        variables: { input: { ...item } }
+        variables: { input: copy }
       });
+      console.log(data);
     } catch (err) {
       console.error(err);
     }

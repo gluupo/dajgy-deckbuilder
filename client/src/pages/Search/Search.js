@@ -69,14 +69,16 @@ const Search = () => {
                 className='d-flex justify-content-center col-sm-12 mb-5'>
                 {results.map(e =>
                   < MTGCard
-                    multiverseid={e.multiverseid}
-                    types={e.types}
-                    name={e.name}
-                    manaCost={e.manaCost}
-                    supertypes={e.supertypes}
-                    rarity={e.rarity}
-                    imageUrl={e.imageUrl}
-                    text={e.text}
+                    key={e.multiverseid}
+                    {...e}
+                  // multiverseid={e.multiverseid}
+                  // types={e.types}
+                  // name={e.name}
+                  // manaCost={e.manaCost}
+                  // supertypes={e.supertypes}
+                  // rarity={e.rarity}
+                  // imageUrl={e.imageUrl}
+                  // text={e.text}
                   />)}
               </Row>
             </Row>
