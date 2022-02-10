@@ -1,7 +1,8 @@
 import React from "react";
 import { GET_DECK } from '../../utils/queries';
 import { useParams } from "react-router-dom";
-import { useQuery } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
+import { EDIT_LAND } from '../../utils/mutations'
 import { Container, Row, Col } from "react-bootstrap";
 import MTGCard from '../../components/Card/MTGCard';
 import { TiArrowSortedDown, TiArrowSortedUp } from 'react-icons/ti';
@@ -20,32 +21,58 @@ const Deck = () => {
   console.log(data?.getDeck)
   const deck = data?.getDeck || {};
 
+  const [editLand, { manaError }] = useMutation(EDIT_LAND)
+
   const manaSymbols = [
     {
       id: 0,
-      image: whitemana
+      image: whitemana,
+      name: "plain"
     },
     {
       id: 1,
-      image: bluemana
+      image: bluemana,
+      name: "island"
     },
     {
       id: 2,
-      image: blackmana
+      image: blackmana,
+      name: "swamp"
     },
     {
       id: 3,
-      image: redmana
+      image: redmana,
+      name: "mountain"
     },
     {
       id: 4,
-      image: greenmana
+      image: greenmana,
+      name: "forest"
     },
   ]
 
   if (error) console.log(error);
   if (loading) {
     return <h4>Loading...</h4>
+  }
+
+  const renderMana = (type) => {
+    if (deck.lands.length) {
+      for (let i = 0; i < deck.lands.length; i++) {
+        if (deck.lands[i] === type) {
+          return deck.lands[i]
+        }
+      }
+    }
+  }
+
+  const manaClickHandler = async (e) => {
+    try {
+      const { manaData } = await editLand({ variables: { type: e.target.dataset.type, operation: e.target.dataset.operation } })
+      return manaData
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   const renderDeck = () => {
@@ -83,6 +110,9 @@ const Deck = () => {
               {manaSymbols.map(e =>
                 <Col className="row justify-content-center" key={e.id}>
                   <TiArrowSortedUp
+                    onClick={manaClickHandler}
+                    data-type={e.name}
+                    data-operation="plus"
                     className="text-light col-12"
                     size={40}
                   />
@@ -101,8 +131,11 @@ const Deck = () => {
                       fontSize: '50px',
                       textShadow: '-2px -2px 2px #f00'
                     }}
-                    alt={e.image}>10</Col>
+                    alt={e.image}>{renderMana(e.name)}</Col>
                   <TiArrowSortedDown
+                    onClick={manaClickHandler}
+                    data-opertaion="minus"
+                    data-type={e.name}
                     className="text-light col-12"
                     size={40} />
                 </Col>

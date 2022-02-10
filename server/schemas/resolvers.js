@@ -122,14 +122,41 @@ const resolvers = {
         }
       }
     },
-    // editLand: async (_, args, context) => {
-    //   if (context.user) {
-    //     const user = await User.findOne({ _id: context.user._id });
-    //     const deck = await Deck.findOneAndUpdate(
-    //       { _id: user.workingDeck }
-    //     )
-    //   }
-    // }
+    editLand: async (_, args, context) => {
+      if (context.user) {
+        const user = await User.findOne({ _id: context.user._id });
+        const deck = await Deck.findOne(
+          { _id: user.workingDeck }
+        )
+        let position;
+        switch (args.type) {
+          case "swamp": position = deck.land[0]
+            break;
+          case "mountain": position = deck.land[1];
+            break;
+          case "plain": position = deck.land[2];
+            break;
+          case "forest": position = deck.land[3];
+            break;
+          case "island": position = deck.land[4];
+            break;
+
+          default:
+            return deck;
+        }
+        if (args.operation === "plus") {
+          position++
+          deck.save()
+          return deck;
+        } else {
+          if (position > 0) {
+            position--
+            deck.save()
+          }
+        }
+        return deck;
+      }
+    }
   }
 }
 
