@@ -100,11 +100,24 @@ export const REMOVE_FROM_DECK = gql`
 export const EDIT_LAND = gql`
   mutation editLand($landtype: String!, $operation: String!) {
     editLand(landtype:$landtype,operation:$operation){
-    swamp
-    plain
-    mountain
-    forest
-    island
+       _id
+      createdAt
+      swamp
+      plain
+      mountain
+      forest
+      island
+      cards{
+        name
+        types
+        manaCost
+        supertypes
+        rarity
+        imageUrl
+        text
+        multiverseid
+        cardCount
+  }
   }
 }
 `

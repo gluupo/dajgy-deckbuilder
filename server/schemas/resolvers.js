@@ -133,11 +133,11 @@ const resolvers = {
             if (operation === "plus") {
               deck[land]++
               deck.save()
-              return land
+              return deck
             } else if (operation === "minus" && deck[land] > 0) {
               deck[land]--
               deck.save()
-              return land
+              return deck
             }
           }
         }

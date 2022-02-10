@@ -21,7 +21,24 @@ const Deck = () => {
   console.log(data?.getDeck)
   const deck = data?.getDeck || {};
 
-  const [editLand, { manaError }] = useMutation(EDIT_LAND)
+  console.log(data);
+
+  const [editLand, { manaError }] = useMutation(EDIT_LAND, {
+    // The update method allows us to access and update the local cache
+    update(cache, { data: { editLand } }) {
+      try {
+        if (deck) {
+          cache.writeQuery({
+            query: GET_DECK,
+            variables: { _id: id },
+            data: { deck: { ...deck } }
+          });
+        }
+      } catch (e) {
+        // console.error(e);
+      }
+    }
+  });
 
   const manaSymbols = [
     {
