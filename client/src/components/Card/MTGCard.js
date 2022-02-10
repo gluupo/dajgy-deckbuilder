@@ -4,6 +4,7 @@ import { useMutation } from "@apollo/client";
 import Auth from "../../utils/auth";
 import { ADD_TO_DECK, REMOVE_FROM_DECK } from "../../utils/mutations";
 import './assets/styles.css';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 
 
@@ -59,8 +60,8 @@ const MTGCard = (item) => {
   return (
     <Col xs={12} sm={6} md={3} key={name} style={divStyle} alt={`${name} ${manaCost} \n${text}`} title={`${name} ${manaCost} \n${text}`} className='mb-3 m-1'>
       <img src={imageUrl} className="img-fluid mtg-card" />
-      <Button variant="outline-light" className="m-1" data-type="+" onClick={Auth.loggedIn() ? clickHandler : null}>+</Button>
-      <Button variant="outline-light" className="m-1" data-type="-" onClick={Auth.loggedIn() ? clickHandler : null}>-</Button>
+      <ButtonGroup><Button variant="outline-light" className="m-1" data-type="+" onClick={Auth.loggedIn() ? clickHandler : null}>+</Button>
+        <Button variant="outline-light" className="m-1" data-type="-" onClick={Auth.loggedIn() ? clickHandler : null}>-</Button></ButtonGroup>
     </Col >
   )
 }
