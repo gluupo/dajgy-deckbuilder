@@ -3,7 +3,7 @@ import { GET_DECK } from '../../utils/queries';
 import { useParams } from "react-router-dom";
 import { useQuery, useMutation } from "@apollo/client";
 import { EDIT_LAND, UPDATE_DECK_NAME } from '../../utils/mutations'
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import MTGCard from '../../components/Card/MTGCard';
 import { TiArrowSortedDown, TiArrowSortedUp } from 'react-icons/ti';
 import blackmana from './assets/black mana.png';
@@ -105,13 +105,13 @@ const Deck = () => {
   const renderDeck = () => {
     if (deck.cards && deck.cards.length > 0) {
       return (
-        <Col>
+        <>
           {deck.cards.map(e =>
             < MTGCard
               key={e.multiverseid}
               {...e}
             />)}
-        </Col>
+        </>
       )
     }
   }
@@ -127,14 +127,18 @@ const Deck = () => {
             <Row className="justify-content-center">
               {manaSymbols.map(e =>
                 <Col className="row justify-content-center" key={e.id}>
-                  <div
+                  <Button
+                    variant="transparent"
                     onClick={() => manaIncrementHandler(e.name)}
+                    style={{
+                      "cursor": "pointer"
+                    }}
                   >
                     <TiArrowSortedUp
                       className="text-light col-12"
                       size={40}
                     />
-                  </div>
+                  </Button>
                   <Col xs={12}
                     className="m-0 text-white"
                     style={{
@@ -151,15 +155,25 @@ const Deck = () => {
                       textShadow: '-2px -2px 2px #f00'
                     }}
                     alt={e.image}>{renderMana(e.name)}</Col>
-                  <TiArrowSortedDown
+                  <Button
+                    variant="transparent"
                     onClick={() => manaDecrementHandler(e.name)}
-                    className="text-light col-12"
-                    size={40} />
+
+                    style={{
+                      "cursor": "pointer"
+                    }}
+                  >
+                    <TiArrowSortedDown
+                      className="text-light col-12"
+                      size={40} />
+                  </Button>
                 </Col>
               )}
             </Row>
           </Container>
-          {renderDeck()}
+          <Row>
+            {renderDeck()}
+          </Row>
         </Row>
       </Container>
     </>
