@@ -16,6 +16,9 @@ function Navigation() {
         <Navbar bg="dark" variant="dark" id="nav">
           <Container>
             <Nav className="me-auto">
+              <Nav.Link href="/">
+                home
+              </Nav.Link>
               <Nav.Link onClick={logout}>
                 logout
               </Nav.Link>
@@ -36,6 +39,9 @@ function Navigation() {
     <Navbar bg="dark" variant="dark" id="nav">
       <Container>
         <Nav className="me-auto">
+          <Nav.Link href="/">
+            home
+          </Nav.Link>
           <Nav.Link href="/login">
             login
           </Nav.Link>
