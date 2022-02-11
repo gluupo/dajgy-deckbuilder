@@ -8,7 +8,8 @@ import { useMutation } from '@apollo/client';
 const DeckList = (deck) => {
     const [editDeck, { error }] = useMutation(EDIT_DECK);
     let history = useHistory();
-    console.log(error)
+    if (error) console.log(error)
+    console.log(deck)
 
     const editDeckHandler = async () => {
         const { data } = await editDeck({
@@ -17,19 +18,45 @@ const DeckList = (deck) => {
         let path = `/deck/${deck._id}`;
         history.push(path);
     }
+    const renderButton = () => {
+        if (deck.editable) {
+            return (
+                <>
+                    <Button
+                        className="mx-2"
+                        variant="outline-light"
+                        href={`/deck/${deck._id}`}
+                    >
+                        view
+                    </Button>
+                    <Button
+                        className="mx-2"
+                        variant="outline-light"
+                        onClick={editDeckHandler}
+                    >
+                        edit
+                    </Button>
+                </>
+            )
+        } else {
+            return (
+                <Button
+                    className="mx-2"
+                    variant="outline-light"
+                    href={`/deck/${deck._id}`}
+                >
+                    view
+                </Button>
+            )
+        }
+    }
+
     if (deck.editable) {
         return (
             <ListGroup.Item
                 className="bg-dark" key={deck._id} id={deck._id}>
-                <h1>{deck.name ? deck.name : 'New Deck'}</h1>
-                <Button
-                    className="mx-2"
-                    variant="outline-light"
-                    href={`/deck/${deck._id}`}>view</Button>
-                <Button
-                    className="mx-2"
-                    variant="outline-light"
-                    onClick={editDeckHandler}>edit</Button>
+                <h1 className="text-light">{deck.name ? deck.name : 'New Deck'}</h1>
+                {renderButton()}
             </ListGroup.Item>
         );
     } else {
@@ -38,11 +65,8 @@ const DeckList = (deck) => {
                 className="bg-dark text-light p-2 m-3"
                 id="bg-card"
                 key={deck._id}>
-                <h1>{deck.name ? deck.name : 'New Deck'}</h1>
-                <Button
-                    className="mx-2"
-                    variant="outline-light"
-                    href={`/deck/${deck._id}`}>view</Button>
+                <h1 className="text-light">{deck.name ? deck.name : 'New Deck'}</h1>
+                {renderButton()}
             </ListGroup.Item>
         )
     }

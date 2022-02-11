@@ -110,7 +110,7 @@ const Deck = () => {
         <>
           {
             manaSymbols.map(e =>
-              <Col xs={4} sm={2} className="row justify-content-center" key={e.id}>
+              <Col xs={4} md={2} className="row justify-content-center" key={e.id}>
                 <Button
                   variant="transparent"
                   onClick={() => manaIncrementHandler(e.name)}
