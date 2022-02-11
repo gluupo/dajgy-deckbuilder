@@ -18,9 +18,6 @@ const Home = () => {
       <div className='my-auto'>
         <LatestDeck />
       </div>
-      <div>
-        {renderUsername()}
-      </div>
     </>
   );
 };
