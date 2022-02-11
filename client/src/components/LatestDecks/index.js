@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_ALL_DECKS } from '../../utils/queries';
-import { Row, Container, Button } from 'react-bootstrap'
+import { Row, Container, Button, Form } from 'react-bootstrap'
 
 const LatestDeck = () => {
   const { loading, data } = useQuery(GET_ALL_DECKS, { variables: { order: -1, limit: 5 } });
@@ -11,6 +11,7 @@ const LatestDeck = () => {
     return (
       <div>
         <Button
+          id="deckList"
           variant="outline-light"
           href={`/deck/${_id}`}
           size="lg"
@@ -35,14 +36,14 @@ const LatestDeck = () => {
   }
   return (
     <>
-      <Container className='flex-fill align-items-center d-flex py-3'>
+      <Container className='flex-fill align-items-center d-flex'>
         <Row className="rounded-3 d-flex justify-content-center text-center align-items-center col-11 col-lg-6 m-auto bg-dark text-light" id="bg-card">
-          <div>
-            <h1>
+          <Form className="col-12 col-md-12 col-lg-10 bg-dark p-4 p-sm-5 rounded-3 m-2">
+            <h1 className='text-light mb-4'>
               List of Decks
             </h1>
             {renderDecks()}
-          </div>
+          </Form>
         </Row>
       </Container>
     </>

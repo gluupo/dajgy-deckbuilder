@@ -25,3 +25,11 @@ h1, #submit {
 #bg-card {
   opacity: 97%;
 }
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width:430px) {
+  #deckList {
+    width: 250px !important;
+  }
+};
