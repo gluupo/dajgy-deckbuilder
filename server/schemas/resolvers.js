@@ -76,11 +76,11 @@ const resolvers = {
         else {
           for (let i = 0; i < deck.cards.length; i++) {
             if (deck.cards[i].name === input.name) {
-              if ((deck.cards[i].supertypes != null) && deck.cards[i].supertypes.some(str => str === 'Legendary') && deck.cards[i].cardCount < 2) {
+              if (deck.cards[i].supertypes != null && !!deck.cards[i].supertypes.find(v => v.includes('Legendary')) && deck.cards[i].cardCount < 2) {
                 deck.cards[i].cardCount++
                 deck.save();
                 return deck;
-              } else if (deck.cards[i].cardCount < 4) {
+              } else if (deck.cards[i].cardCount < 4 && deck.cards[i].supertypes === null) {
                 deck.cards[i].cardCount++
                 deck.save();
                 return deck;

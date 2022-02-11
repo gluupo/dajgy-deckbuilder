@@ -9,7 +9,6 @@ const DeckList = (deck) => {
     const [editDeck, { error }] = useMutation(EDIT_DECK);
     let history = useHistory();
     if (error) console.log(error)
-    console.log(deck)
 
     const editDeckHandler = async () => {
         const { data } = await editDeck({

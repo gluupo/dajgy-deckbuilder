@@ -54,7 +54,6 @@ const MTGCard = (item) => {
         imageUrl,
         types,
       }
-      console.log(copy)
 
       if (e.target.dataset.type === '+') {
         const { data } = await addToDeck({
