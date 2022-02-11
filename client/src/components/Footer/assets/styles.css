@@ -1,7 +1,7 @@
 .footer {
     min-width: 100%;
     margin-top: auto !important;
-    opacity: 60%;
+    opacity: 0.6;
 }
 
 .footer p {
