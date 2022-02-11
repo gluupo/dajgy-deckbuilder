@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <>
       <div className="" id="bg"></div>
-      <div>
+      <div className='my-auto'>
         <LatestDeck />
       </div>
       <div>

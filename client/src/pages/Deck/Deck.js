@@ -110,7 +110,7 @@ const Deck = () => {
         <>
           {
             manaSymbols.map(e =>
-              <Col xs={4} className="row justify-content-center" key={e.id}>
+              <Col xs={4} sm={2} className="row justify-content-center" key={e.id}>
                 <Button
                   variant="transparent"
                   onClick={() => manaIncrementHandler(e.name)}
@@ -222,14 +222,14 @@ const Deck = () => {
   return (
     <>
       <Container
-        className='flex-fill d-flex'>
+        className='flex-fill d-flex my-5'>
         <Row
           className="justify-content-center text-center align-items-center m-auto p-4 bg-dark rounded-3" id="bg-card">
           <InlineEditDeckName
             className='col-6'
             value={deck.name || "New Deck" || value} setValue={setValue} editable={editable} />
           <Container>
-            <Row className="justify-content-center">
+            <Row className="justify-content-center my-5">
               {renderMana()}
             </Row>
           </Container>
