@@ -22,7 +22,9 @@ h1, #submit {
   font-family: 'Rubik Mono One', sans-serif;
 }
 
-
+#bg-card {
+  opacity: 0.9;
+}
 
 /* MEDIA QUERIES */
 
@@ -31,5 +33,3 @@ h1, #submit {
     width: 250px !important;
   }
 }
-
-;
