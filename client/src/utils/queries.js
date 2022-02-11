@@ -18,6 +18,7 @@ export const QUERY_USER = gql`
       email
       decks {
         _id
+        name
   	    cards{
         	name
         	types
