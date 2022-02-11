@@ -85,7 +85,6 @@ const Profile = () => {
         <h4>No Decks Created</h4>
       )
     } else {
-      console.log(user.decks)
       return (
         <ListGroup defaultActiveKey="key">
           {

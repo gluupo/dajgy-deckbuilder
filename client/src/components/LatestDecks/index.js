@@ -31,7 +31,6 @@ const LatestDeck = () => {
     if (loading) {
       return <h2>Loading ...</h2>
     } else if (!decks.length) return null;
-    console.log(decks);
     return decks.map(deck => <DeckLink key={deck._id} {...deck} />);
   }
   return (
