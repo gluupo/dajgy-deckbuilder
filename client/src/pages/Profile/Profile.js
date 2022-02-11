@@ -73,7 +73,7 @@ const Profile = () => {
   const renderCreateButton = () => {
     if (editable) {
       return (
-        <Button variant="outline-light" onClick={createHandler}>Create Deck</Button>
+        <Button size="lg m-4" variant="outline-light" onClick={createHandler}>create deck</Button>
       )
     }
   }
@@ -110,10 +110,10 @@ const Profile = () => {
               {renderCreateButton()}
             </div>
           </div>
-          <Col xs={12}>
+          <Col xs={12} className='p-2'>
             {renderDeckList()}
           </Col>
-          <Col xs lg="2">
+          <Col xs lg="2" className='m-5'>
           </Col>
         </Row>
       </Container>
