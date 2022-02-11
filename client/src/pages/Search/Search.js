@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLazyQuery } from '@apollo/client';
 import { Row, Form, Button, Container } from 'react-bootstrap'
 import Auth from '../../utils/auth';
+import { ToastProvider } from 'react-toast-notifications'
 
 
 // Utilities
@@ -118,7 +119,9 @@ const Search = () => {
   }
   return (
     <>
-      {renderSearch()}
+      <ToastProvider>
+        {renderSearch()}
+      </ToastProvider>
     </>
   )
 }
