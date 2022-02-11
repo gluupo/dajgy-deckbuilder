@@ -7,6 +7,7 @@ Deck building app for Magic: The Gathering.
 * [Link](#link)
 * [Available-Scripts](#available-scripts)
 * [Code](#code)
+* [Presentation-Slides](#presentation-slides)
 * [Contact](#contact)
 * [Technologies](#technologies)
 * [Project Status](#project-status)
@@ -38,11 +39,15 @@ Your app is ready to be deployed!
 
 
 ## Link
-[React Portfolio Website]() TODO: ADD Deployed URL
+[React Portfolio Website](https://tranquil-falls-52143.herokuapp.com/)
 Follow this link to access the deployed version of the app.
 
 ## Code
 [GitHub Code Repository](https://github.com/gluupo/dajgy-deckbuilder)
+
+
+## Presentation Slides
+[DAJGY Deck Presentation on Google Slides](https://docs.google.com/presentation/d/1Z1-n2RBuzl_47rU9D5wJ_HXdbPc6nS_eEpuvNQ795cs/edit?usp=sharing)
 
 
 ## Contact 
