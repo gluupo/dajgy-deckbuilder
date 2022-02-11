@@ -21,7 +21,7 @@ const LatestDeck = () => {
             "width": "400px"
           }}
         >
-          {name}
+          {name ? name : 'New Deck'}
         </Button >
       </div>
     );

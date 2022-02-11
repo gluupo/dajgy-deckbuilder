@@ -23,7 +23,7 @@ const MTGCard = (item) => {
     cardCount,
     deckId
   } = item;
-  const { loading, data, error: deckError } = useQuery(GET_DECK, { variables: { _id: '6205cea3a8acc60016fefc87' } });
+  const { loading, data, error: deckError } = useQuery(GET_DECK, { variables: { _id: id || '6205cea3a8acc60016fefc87' } });
   const deck = data?.getDeck.cards || {}
 
   const [addToDeck, { error }] = useMutation(ADD_TO_DECK, {
