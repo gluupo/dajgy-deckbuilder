@@ -6,10 +6,12 @@ import { GET_DECK } from "../../utils/queries";
 import { ADD_TO_DECK, REMOVE_FROM_DECK } from "../../utils/mutations";
 import './assets/styles.css';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import { useToasts } from 'react-toast-notifications'
 
 
 
 const MTGCard = (item) => {
+  const { addToast } = useToasts();
   let {
     multiverseid,
     text,
@@ -59,9 +61,17 @@ const MTGCard = (item) => {
         const { data } = await addToDeck({
           variables: { input: copy }
         });
+        addToast('Card Added', {
+          appearance: 'success',
+          autoDismiss: true,
+        })
       } else if (e.target.dataset.type === '-') {
         const { data } = await removeCard({
           variables: { multiverseid: multiverseid }
+        })
+        addToast('Card Removed', {
+          appearance: 'error',
+          autoDismiss: true,
         })
       }
     } catch (err) {
@@ -104,6 +114,7 @@ const MTGCard = (item) => {
 
 
   return (
+
     <Col xs={12} sm={6} md={3} key={name} className='mb-3 m-1'>
       {cardCount ? <h4 className="text-white">{cardCount} in Deck</h4> : null}
       <img src={imageUrl} className="mtg-card" alt={`${name} ${manaCost} \n${text}`} title={`${name} ${manaCost} \n${text}`} />

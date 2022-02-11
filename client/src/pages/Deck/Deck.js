@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+import { ToastProvider } from 'react-toast-notifications'
 //Components
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { TiArrowSortedDown, TiArrowSortedUp } from 'react-icons/ti';
@@ -222,24 +223,26 @@ const Deck = () => {
 
   return (
     <>
-      <Container
-        className='my-5'>
-        <Row
-          className="justify-content-center text-center align-items-center m-auto p-0 p-md-4 bg-dark rounded-3" id="bg-card">
-          <InlineEditDeckName
-            className='col-6'
-            value={deck.name || "New Deck" || value} setValue={setValue} editable={editable} />
-          <Container>
-            <Row className="justify-content-center my-5">
-              {renderMana()}
+      <ToastProvider>
+        <Container
+          className='my-5'>
+          <Row
+            className="justify-content-center text-center align-items-center m-auto p-0 p-md-4 bg-dark rounded-3" id="bg-card">
+            <InlineEditDeckName
+              className='col-6'
+              value={deck.name || "New Deck" || value} setValue={setValue} editable={editable} />
+            <Container>
+              <Row className="justify-content-center my-5">
+                {renderMana()}
+              </Row>
+            </Container>
+            <Row className='d-flex justify-content-center col-sm-12 mb-5 row'
+            >
+              {renderDeck()}
             </Row>
-          </Container>
-          <Row className='d-flex justify-content-center col-sm-12 mb-5 row'
-          >
-            {renderDeck()}
           </Row>
-        </Row>
-      </Container>
+        </Container>
+      </ToastProvider>
     </>
   )
 }
