@@ -87,21 +87,21 @@ const Profile = () => {
     } else {
       console.log(user.decks)
       return (
-        <ListGroup defaultActiveKey="key">
+        <>
           {
             user.decks.map(deck => (
               <DeckList key={deck._id} {...deck} editable={editable} />
             ))
           }
-        </ListGroup>
+        </>
       )
     }
   };
 
   return (
     <>
-      <Container className='mt-5'>
-        <Row>
+      <Container className='mt-5 p-4'>
+        <Row className='justify-content-center p-4'>
           <div>
             <div>
               <h1 className='text-light'>
@@ -110,11 +110,7 @@ const Profile = () => {
               {renderCreateButton()}
             </div>
           </div>
-          <Col xs={12} className='p-2'>
-            {renderDeckList()}
-          </Col>
-          <Col xs lg="2" className='m-5'>
-          </Col>
+          {renderDeckList()}
         </Row>
       </Container>
     </>
