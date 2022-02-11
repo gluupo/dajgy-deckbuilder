@@ -36,13 +36,13 @@ const LatestDeck = () => {
   return (
     <>
       <Container className='flex-fill align-items-center d-flex'>
-        <Row className="rounded-3 d-flex justify-content-center text-center align-items-center col-11 col-lg-6 m-auto bg-dark text-light" id="bg-card">
+        <Row className="rounded-3 d-flex justify-content-center text-center align-items-center col-11 col-lg-6 m-auto bg-dark text-light p-5" id="bg-card">
           <Form className="col-12 col-md-12 col-lg-10 bg-dark p-4 p-sm-5 rounded-3 m-2">
-            <h1 className='text-light mb-4'>
-              List of Decks
+            <h1 className='text-light mb-2'>
+              Latest Decks
             </h1>
-            {renderDecks()}
           </Form>
+          {renderDecks()}
         </Row>
       </Container>
     </>
