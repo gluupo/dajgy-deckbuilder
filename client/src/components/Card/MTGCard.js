@@ -23,7 +23,7 @@ const MTGCard = (item) => {
     cardCount,
     deckId
   } = item;
-  const { loading, data, error: deckError } = useQuery(GET_DECK, { variables: { _id: deckId } });
+  const { loading, data, error: deckError } = useQuery(GET_DECK, { variables: { _id: '6205cea3a8acc60016fefc87' } });
   const deck = data?.getDeck.cards || {}
 
   const [addToDeck, { error }] = useMutation(ADD_TO_DECK, {
@@ -70,8 +70,8 @@ const MTGCard = (item) => {
 
 
 
-  if (error) console.log(error)
-  if (removeError) console.log(removeError)
+  // if (error) console.log(error)
+  // if (removeError) console.log(removeError)
 
   const renderButtons = () => {
     if (editable) {
