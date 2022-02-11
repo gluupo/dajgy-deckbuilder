@@ -66,20 +66,6 @@ const Profile = () => {
     );
   }
 
-  const renderCurrentUserInfo = () => {
-    if (id) return null;
-    return (
-      <Container
-        style={{ width: '20rem', height: '100%' }}
-        className='bg-light rounded-3 p-3 pb-1'>
-        <ul>
-          <li>username: {user.username}</li>
-          <li>email: {user.email}</li>
-        </ul>
-      </Container>
-    );
-  };
-
   const createHandler = async () => {
     await createDeck()
   }
@@ -121,7 +107,6 @@ const Profile = () => {
               <h1 className='text-light'>
                 Viewing {editable ? 'your' : `${user.username}'s`} profile
               </h1>
-              {renderCurrentUserInfo()}
               {renderCreateButton()}
             </div>
           </div>
