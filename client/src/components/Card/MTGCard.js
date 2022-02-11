@@ -18,7 +18,8 @@ const MTGCard = (item) => {
     rarity,
     imageUrl,
     types,
-    editable
+    editable,
+    cardCount
   } = item;
 
   const [addToDeck, { error }] = useMutation(ADD_TO_DECK);
@@ -26,7 +27,6 @@ const MTGCard = (item) => {
 
   const clickHandler = async (e) => {
     try {
-      console.log(e.target.dataset.type)
       // Execute mutation and pass in defined parameter data as variables
       const copy = {
         multiverseid,
@@ -90,6 +90,7 @@ const MTGCard = (item) => {
 
   return (
     <Col xs={12} sm={6} md={3} key={name} className='mb-3 m-1'>
+      <h4 className="text-white">{cardCount} in Deck</h4>
       <img src={imageUrl} className="mtg-card" alt={`${name} ${manaCost} \n${text}`} title={`${name} ${manaCost} \n${text}`} />
       {renderButtons()}
     </Col >
