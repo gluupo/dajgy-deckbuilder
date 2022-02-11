@@ -73,7 +73,7 @@ const Profile = () => {
   const renderCreateButton = () => {
     if (editable) {
       return (
-        <Button variant="outline-light" onClick={createHandler}>Create Deck</Button>
+        <Button size="lg m-4" variant="outline-light" onClick={createHandler}>create deck</Button>
       )
     }
   }
@@ -86,21 +86,21 @@ const Profile = () => {
       )
     } else {
       return (
-        <ListGroup defaultActiveKey="key">
+        <>
           {
             user.decks.map(deck => (
               <DeckList key={deck._id} {...deck} editable={editable} />
             ))
           }
-        </ListGroup>
+        </>
       )
     }
   };
 
   return (
     <>
-      <Container className='mt-5'>
-        <Row>
+      <Container className='mt-5 p-4'>
+        <Row className='justify-content-center p-4'>
           <div>
             <div>
               <h1 className='text-light'>
@@ -109,11 +109,7 @@ const Profile = () => {
               {renderCreateButton()}
             </div>
           </div>
-          <Col xs={12}>
-            {renderDeckList()}
-          </Col>
-          <Col xs lg="2">
-          </Col>
+          {renderDeckList()}
         </Row>
       </Container>
     </>
