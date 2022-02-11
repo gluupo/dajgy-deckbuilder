@@ -222,9 +222,9 @@ const Deck = () => {
   return (
     <>
       <Container
-        className='flex-fill d-flex my-5'>
+        className='my-5'>
         <Row
-          className="justify-content-center text-center align-items-center m-auto p-4 bg-dark rounded-3" id="bg-card">
+          className="justify-content-center text-center align-items-center m-auto p-0 p-md-4 bg-dark rounded-3" id="bg-card">
           <InlineEditDeckName
             className='col-6'
             value={deck.name || "New Deck" || value} setValue={setValue} editable={editable} />
@@ -233,7 +233,7 @@ const Deck = () => {
               {renderMana()}
             </Row>
           </Container>
-          <Row className='d-flex justify-content-center col-sm-12 mb-5'
+          <Row className='d-flex justify-content-center col-sm-12 mb-5 row'
           >
             {renderDeck()}
           </Row>

@@ -53,13 +53,7 @@ const MTGCard = (item) => {
     }
   }
 
-  const divStyle = {
-    // backgroundImage: `url(${imageUrl})`,
-    backgroundSize: 'contain',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-    minHeight: '360px'
-  }
+
 
   if (error) console.log(error)
   if (removeError) console.log(removeError)
@@ -95,8 +89,8 @@ const MTGCard = (item) => {
 
 
   return (
-    <Col xs={12} sm={6} md={3} key={name} style={divStyle} className='mb-3 m-1'>
-      <img src={imageUrl} className="img-fluid mtg-card" alt={`${name} ${manaCost} \n${text}`} title={`${name} ${manaCost} \n${text}`} />
+    <Col xs={12} sm={6} md={3} key={name} className='mb-3 m-1'>
+      <img src={imageUrl} className="mtg-card" alt={`${name} ${manaCost} \n${text}`} title={`${name} ${manaCost} \n${text}`} />
       {renderButtons()}
     </Col >
   )
