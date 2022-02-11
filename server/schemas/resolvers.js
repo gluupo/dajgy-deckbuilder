@@ -14,7 +14,6 @@ const resolvers = {
     me: async (_, args, context) => {
       if (context.user) {
         const me = await User.findOne({ _id: context.user._id }).populate('decks');
-        console.log(me)
         return me;
       }
       throw new AuthenticationError('You need to be logged in!');
@@ -69,18 +68,24 @@ const resolvers = {
       if (context.user) {
         const user = await User.findOne({ _id: context.user._id });
         Object.keys(input).map(k => input[k] = typeof input[k] == 'string' ? input[k].trim() : input[k]);
-        const deck = await Deck.findOne({ _id: user.workingDeck })
-        const exists = deck.cards.some((obj) => obj.multiverseid === input.multiverseid)
+        const deck = await Deck.findOne({ _id: user.workingDeck });
+        const exists = deck.cards.some((obj) => obj.name === input.name)
         if (!exists) {
           deck.cards.push({ ...input })
         }
         else {
           for (let i = 0; i < deck.cards.length; i++) {
-            if (deck.cards[i].multiverseid === input.multiverseid) {
-              if (deck.cards[i].supertypes && deck.cards[i].supertypes.some(str => str === 'Legendary') && deck.cards[i].cardCount < 2)
+            if (deck.cards[i].name === input.name) {
+              if ((deck.cards[i].supertypes != null) && deck.cards[i].supertypes.some(str => str === 'Legendary') && deck.cards[i].cardCount < 2) {
                 deck.cards[i].cardCount++
-            } else if (deck.cards[i].cardCount < 4)
-              deck.cards[i].cardCount++
+                deck.save();
+                return deck;
+              } else if (deck.cards[i].cardCount < 4) {
+                deck.cards[i].cardCount++
+                deck.save();
+                return deck;
+              }
+            }
           }
         }
         deck.save()

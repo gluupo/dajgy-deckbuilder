@@ -213,6 +213,7 @@ const Deck = () => {
               key={e.multiverseid}
               {...e}
               editable={editable}
+              deckId={id}
             />)}
         </>
       )
